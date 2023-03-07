@@ -70,6 +70,72 @@ body {
 .border-primary {
   border-color: rgb(39, 84, 115);
 }
+.burger{	
+    
+    position: absolute;
+    
+    cursor: pointer;
+    
+    right:5%;
+    top:3px;
+    
+     /* display na none kiya hai kyuki mujhe burger na phone me khana hai abhi nhi */
+    
+    }
+.line
+    {
+          width:33px;
+          height: 4px; 
+          background-color:black; 
+          margin: 5px 3px;
+    }
+
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 10px;
+  left:15px;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
 
     </style>
   </head>
@@ -124,7 +190,25 @@ body {
         </div>
 
         <!-- mob menu -->
-        <div class="bg-gray-500 w-full md:hidden">menu bar here</div>
+        
+        <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden">
+        <div
+          id="menu"
+          class="absolute  flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md" >
+          <img src="/public/images/logo.png">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          
+        </div>
+      </div>
       </nav>
 
       <!-- hero section -->
@@ -377,5 +461,15 @@ body {
     <!-- Tailwind CSS script-->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
+    <script>
+      const btn = document.getElementById('menu-btn')
+const nav = document.getElementById('menu')
+
+btn.addEventListener('click', () => {
+  btn.classList.toggle('open')
+  nav.classList.toggle('flex')
+  nav.classList.toggle('hidden')
+})
+    </script>
   </body>
 </html>
