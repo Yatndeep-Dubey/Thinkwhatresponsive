@@ -20,7 +20,7 @@
     <!-- title -->
     <title>ThinkWh?t</title>
     <style>
-        * {
+     * {
   font-family: "Lato", sans-serif;
 }
 
@@ -31,11 +31,23 @@ body {
 .bg-header {
   background: rgb(216, 227, 231);
   /* border-radius: 0 0 0 70%; */
-  width: 100vw;
-  height: fit-content;
-  border-bottom-left-radius: 100% 300px;
+  width:2313px;
+  height:660px;
+  top:-235px;
+  left:-436px;
+  border-bottom-left-radius: 190% 800px;
+  border-bottom-right-radius: 190% 800px;
 }
-
+.bg-headeres {
+  background: rgb(216, 227, 231);
+  /* border-radius: 0 0 0 70%; */
+  width:2313px;
+  height:980px;
+  top:-235px;
+  left:-436px;
+  border-bottom-left-radius: 190% 200px;
+  border-bottom-right-radius: 190% 200px;
+}
 .color-primary {
   color: rgb(39, 84, 115);
 }
@@ -67,6 +79,25 @@ body {
 .border-primary {
   border-color: rgb(39, 84, 115);
 }
+.burger{	
+    
+    position: absolute;
+    
+    cursor: pointer;
+    
+    right:5%;
+    top:20px;
+    display: flex;
+    justify-content: center;
+    
+     /* display na none kiya hai kyuki mujhe burger na phone me khana hai abhi nhi */
+    
+    }
+.sleft{
+  position: absolute;
+  right:90px;
+}
+
 /* Hamburger Menu */
 .hamburger {
   cursor: pointer;
@@ -80,15 +111,13 @@ body {
 .hamburger-middle,
 .hamburger-bottom {
   position: absolute;
-  margin-top: 0;
-  z-index: 1;
-  top: 10px;
-  left:15px;
+  left: 5%;
   width: 24px;
   height: 2px;
   background: #000;
   transform: rotate(0);
   transition: all 0.5s;
+  
 }
 
 .hamburger-middle {
@@ -115,79 +144,109 @@ body {
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
+@media screen and (max-width: 480px) {
+  .bg-header {
+    background: rgb(216, 227, 231);
+  /* border-radius: 0 0 0 70%; */
+  width:2313px;
+  height:918px;
+  top:-235px;
+  left:-436px;
+  border-bottom-left-radius: 190% 200px;
+  border-bottom-right-radius: 190% 200px;
+  }
+}
+.bg-list
+{
+  background-color: rgba(174, 211, 224, 0.8);
+}
     </style>
   </head>
 
   <body>
-    <nav>
+    <section class=" bg-header w-screen">
+      <nav class="">
+        <!-- desktop menu -->
+        <div class="px-14 py-7 hidden md:flex items-center justify-between">
+          <div class="bg-white w-fit h-fit">
+            <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
+          </div>
+          <div
+            class="flex border w-fit bg-white py-3 px-3 ml-14 w-[350px] rounded-full items-center space-x-3 text-lg"
+          >
+            <img src="./public/images/searchButton.png" class="h-5 w-5" />
+            <input
+              type="text"
+              placeholder="Search"
+              class="border-none focus:outline-none"
+            />
+          </div>
 
-      <!-- desktop menu -->
-      <div class="px-14 py-7 hidden md:flex items-center justify-between">
-        <div class="bg-white w-fit h-fit">
-          <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
+          <div>
+            <ul class="flex text-xl space-x-14 mx-24">
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/">
+                <li>About</li>
+              </a>
+              <a href="/">
+                <li>Contact</li>
+              </a>
+            </ul>
+          </div>
+
+        
+       
+            <div class="font-bold flex">
+              <a href="/login">
+              <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+                Login
+              </button>
+              </a>
+              <a href="/signup">
+              <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+                Sign Up
+              </button>
+            </a>
+            </div>
         </div>
-        <div
-          class="flex border w-fit bg-white py-3 px-3 ml-14 w-[350px] rounded-full items-center space-x-3 text-lg"
+
+        <!-- mob menu -->
+        <div class="burger  md:hidden">
+          <div
+          class="flex border w-fit bg-white sleft w-[350px] rounded-full items-center space-x-3 text-lg"
         >
           <img src="./public/images/searchButton.png" class="h-5 w-5" />
           <input
             type="text"
             placeholder="Search"
-            class="border-none focus:outline-none"
+            class="border-none focus:outline-none rounded-full"
           />
         </div>
 
-        <div>
-          <ul class="flex text-xl space-x-14 mx-24">
-            <a href="/">
-              <li>Home</li>
-            </a>
-            <a href="/">
-              <li>About</li>
-            </a>
-            <a href="/">
-              <li>Contact</li>
-            </a>
-          </ul>
+        <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden">
+        <div
+          id="menu"
+          class="absolute mt-[150px] flex-col bg-list items-center hidden self-end py-8 mt-10 space-y-6 font-bold  sm:w-auto sm:self-center left-6 right-6 drop-shadow-md" >
+          <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          
         </div>
-
-      
-     
-          <div class="font-bold flex">
-            <a href="/login">
-            <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
-              Login
-            </button>
-            </a>
-            <a href="/signup">
-            <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
-              Sign Up
-            </button>
-          </a>
-          </div>
       </div>
 
-      <!-- mob menu -->
-      
-      <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
-        <span class="hamburger-top"></span>
-        <span class="hamburger-middle"></span>
-        <span class="hamburger-bottom"></span>
-      </button>
+      </nav>
 
-    <!-- Mobile Menu -->
-    <div class="md:hidden">
-      <div
-        id="menu"
-        class="absolute  flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md" >
-        <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        
-      </div>
-    </div>
-    </nav>
 
     <!-- header section -->
     <div class="bg-light flex flex-col-reverse items-center px-5 md:px-16 py-14 sm:flex-row">
@@ -426,9 +485,9 @@ body {
     </div>
 
     <!-- pop up menu -->
-    <div class="absolute w-full top-40 hidden" id="applyMenu">
+    <div class="absolute  lg:w-full top-40  hidden" id="applyMenu">
       <div
-        class="bg-white py-5 px-12 rounded-lg mx-auto w-fit shadow-lg hover:shadow-2xl space-y-8"
+        class="bg-white  py-5 mx-2 lg:px-12 rounded-lg lg:mx-auto w-[400px] lg:w-fit shadow-lg hover:shadow-2xl space-y-8"
       >
         <p
           class="text-right text-3xl cursor-pointer"
@@ -439,7 +498,7 @@ body {
         </p>
         <p class="text-2xl text-center font-extrabold">Application Form</p>
         <div class="flex flex-col">
-          <label for="name">Name</label>
+          <label for="name " class="mx-2">Name</label>
           <input
             type="text"
             name="name"
@@ -449,7 +508,7 @@ body {
           />
         </div>
         <div class="flex flex-col">
-          <label for="number">Mobile Number</label>
+          <label for="number" class="mx-2">Mobile Number</label>
           <input
             type="number"
             name="mobile number"
@@ -459,7 +518,7 @@ body {
           />
         </div>
         <div class="flex flex-col">
-          <label for="email">Email ID</label>
+          <label for="email" class="mx-2">Email ID</label>
           <input
             type="email"
             name="email"
@@ -470,7 +529,7 @@ body {
         </div>
 
         <div class="flex flex-col">
-          <label for="upi">UPI ID</label>
+          <label for="upi" class="mx-2">UPI ID</label>
           <input
             type="text"
             name="upi"
@@ -481,7 +540,7 @@ body {
         </div>
 
         <div class="flex flex-col">
-          <label for="transaction">Transaction ID</label>
+          <label for="transaction" class="mx-2">Transaction ID</label>
           <input
             type="text"
             name="transaction"
@@ -492,7 +551,7 @@ body {
         </div>
 
         <div class="flex flex-col">
-          <label for="payment method">Payment Method</label>
+          <label for="payment method" class="mx-2">Payment Method</label>
           <input
             type="text"
             name="payment method"
@@ -555,6 +614,15 @@ document
   .addEventListener("click", function () {
     document.getElementById("applyMenu").style.display = "none";
   });
+
+  const btn = document.getElementById('menu-btn')
+const nav = document.getElementById('menu')
+
+btn.addEventListener('click', () => {
+  btn.classList.toggle('open')
+  nav.classList.toggle('flex')
+  nav.classList.toggle('hidden')
+})
     </script>
   </body>
 </html>
