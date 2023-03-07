@@ -160,6 +160,11 @@ body {
 {
   background-color: rgba(174, 211, 224, 0.8);
 }
+.moblogo
+{
+  position: absolute;
+  right:300px;
+}
     </style>
   </head>
 
@@ -214,6 +219,9 @@ body {
 
         <!-- mob menu -->
         <div class="burger  md:hidden">
+          <div class="h-[65px] moblogo w-[65px] -mt-[20px]">
+            <img src="./public/logo.png">
+          </div>
           <div
           class="flex border w-fit bg-white sleft w-[350px] rounded-full items-center space-x-3 text-lg"
         >
@@ -225,7 +233,7 @@ body {
           />
         </div>
 
-        <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+        <button id="menu-btn" class="block -mt-1 hamburger md:hidden focus:outline-none">
           <span class="hamburger-top"></span>
           <span class="hamburger-middle"></span>
           <span class="hamburger-bottom"></span>
