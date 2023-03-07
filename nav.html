@@ -137,8 +137,6 @@ body {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
 
-  
-
     </style>
   </head>
 
@@ -146,23 +144,28 @@ body {
     <section class="bg-header w-screen">
       <nav class="">
         <!-- desktop menu -->
-        <div class="px-14 py-7 hidden md:flex items-center justify-between">
+        <div class="w-full py-7 hidden md:flex items-center justify-between">
           <div class="bg-white w-fit h-fit">
             <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
           </div>
           <div
-            class="flex border w-fit bg-white py-3 px-3 ml-14 w-[350px] rounded-full items-center space-x-3 text-lg"
+            class="flex border bg-white py-2 lg:py-3 px-3 w-fit rounded-full items-center space-x-3 lg:text-lg"
           >
+          <div>
+
             <img src="./public/images/searchButton.png" class="h-5 w-5" />
+          </div>
+          <div>
             <input
               type="text"
               placeholder="Search"
-              class="border-none focus:outline-none"
+              class="border-none focus:outline-none lg:w-52 w-32"
             />
+          </div>
           </div>
 
           <div>
-            <ul class="flex text-xl space-x-14 mx-24">
+            <ul class="flex lg:text-xl lg:space-x-14 lg:mx-24 space-x-3">
               <a href="/">
                 <li>Home</li>
               </a>
@@ -177,14 +180,14 @@ body {
 
         
        
-            <div class="font-bold flex">
+            <div class="font-bold flex space-x-3">
               <a href="/login">
-              <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+              <button class="color-primary bg-white py-2 lg:py-3 lg:px-3 w-[100px] lg:w-[150px] rounded-full items-center space-x-3 lg:text-lg">
                 Login
               </button>
               </a>
               <a href="/signup">
-              <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+              <button class="bg-primary text-white py-2 lg:py-3 lg:px-3 w-[100px] lg:w-[150px] rounded-full items-center space-x-3 lg:text-lg mr-5">
                 Sign Up
               </button>
             </a>
@@ -192,7 +195,7 @@ body {
         </div>
 
         <!-- mob menu -->
-    <div class="navbar">
+        
         <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
           <span class="hamburger-top"></span>
           <span class="hamburger-middle"></span>
@@ -203,26 +206,259 @@ body {
       <div class="md:hidden">
         <div
           id="menu"
-          class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md" >
-          <img src="./public/images/logo.png">
+          class="absolute  flex-col items-center hidden self-end py-8 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md" >
+          <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
+          
+        </div>
+      </div>
+      </nav>
+
+      <!-- hero section -->
+      <div class="-mt-44 lg:-mt-0 flex flex-col-reverse mx-[65px] md:h-[90vh] md:items-center md:flex-row ">
+        <div class="w-[100%]">
+          <div class="color-primary font-bold  md:-mt-20 ">
+            <p class=" text-xl text-center lg:mt-8 -mr-[10px] sm:text-5xl md: font-bold">
+              Give the Best Start to your <span class="invisible sm:visible">Carrier</span> </p>
+              <p class="text-center -mt-[20px] text-3xl sm:hidden"> Carrier</p>
+              </p>
+               
+            </p>
+            <p class=" text-center -mr-[10px] md:my-5 md:text-2xl">
+              Learn, Grow and get Hired!
+            </p>
+          </div>
+
+          <div class=" items-center flex flex-col sm:flex sm:flex-row font-bold my-10 ">
+            <button
+              class="hover:shadow-2xl bg-primary text-white py-3 my-2 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg"
+            >
+              Training
+            </button>
+            <button
+              class="hover:shadow-2xl color-primary bg-white py-3 my-2 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg"
+            >
+              Internship
+            </button>
+          </div>
+        </div>
+        <!-- <div class="w-[200px] h-[200px]  mx-[30px] sm:-mt-[70px] sm:mx-20 sm:w-[566px] sm:h-[420px]"> -->
+          <div>
+          <img src="./public/images/educationamico.svg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Training section -->
+    <div class="container mx-auto py-10">
+      <p class="text-center text-4xl font-bold color-primary uppercase">
+        Training
+      </p>
+      <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 mx-20">
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/ui-ux.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">UI/UX</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/frontendDev.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">Frontend Development</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/backendDev.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">Backend Development</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/flutterDev.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">Flutter Development</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/angularJS.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">Angular Development</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/reactJS.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">React Development</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/googleCloud.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">Cloud Development</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/dsa.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">Data Structure & Algorithm</p>
         </div>
       </div>
     </div>
-      </nav>
-    </section>
-  </body>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    const btn = document.getElementById('menu-btn')
+
+
+    <!-- mid banner section -->
+   
+    <div class=" md:mt-10 md:mx-20">
+    <div>
+      <img
+        src="./public/images/boy.png"
+        alt="boy image"
+        class="sm:h-64 sm:mx-20 sm:h-44 "
+      />
+    </div>
+      <div
+        class="text-center color-primary bg-light -mt-40 justify-end flex p-14"
+      >
+        <div class="mt-28 md:flex md:flex-col space-y-7 md:items-center md:mt-0">
+          <p class="font-extrabold sm:text-4xl">
+            Training your way to success and <br />
+            Apply to jobs with confidence
+          </p>
+          <p class="font-bold sm:text-xl">Learn, Grow and get Hired!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internship section -->
+    <div class="container mx-auto py-10">
+      <p class="text-center text-4xl font-bold color-primary uppercase">
+        Internship
+      </p>
+      <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 mx-20">
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/ui-ux.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">UI/UX</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/frontendDev.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">Frontend Development</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/backendDev.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">Backend Development</p>
+        </div>
+        <div
+          class="shadow-2xl flex justify-center flex-col items-center p-5 rounded-xl bg-white m-7"
+        >
+          <img
+            class="h-44 rounded-xl w-64 bg-light"
+            src="./public/images/flutterDev.png"
+            alt=""
+          />
+          <p class="text-center font-bold text-xl mt-3">Flutter Development</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- lower banner section -->
+    <div class="bg-dark px-10 lg:px-44 py-5 flex justify-between items-center">
+      <p class="lg:text-4xl font-extrabold text-white sm:text-center sm:text-2xl">
+        Kickstart Your Career With <br />
+        ThinkWh?t
+      </p>
+      <img src="./public/images/logo-in-footer@2x.png" alt="logo" class="md:h-52 sm:h-44" />
+    </div>
+
+    <!-- footer -->
+    <div class="bg-footer text-white items-center p-14 space-y-8">
+      <div class="flex justify-center items-center space-x-3">
+        <img src="./public/images/logo-in-footer@2x.png" alt="logo" class="h-16" />
+        <p class="text-2xl sm:text-5xl font-extrabold">ThinkWh?t</p>
+      </div>
+
+      <ul
+        class="flex sm:flex-row flex-col items-center sm:space-x-16 justify-center text-sm sm:text-lg font-bold"
+      >
+        <li>Overview</li>
+        <li>Contact</li>
+        <li>Terms & Conditions</li>
+        <li>Privacy</li>
+        <li>Help</li>
+      </ul>
+
+      <ul class="flex space-x-10 justify-center">
+        <li><img src="./public/images//insta-logo.png" class="h-7" /></li>
+        <li><img src="./public/images/twitter-logo.png" class="h-7" /></li>
+        <li><img src="./public/images/fb-logo.png" class="h-7" /></li>
+        <li><img src="./public/images/linkedin-logo.png" class="h-7" /></li>
+      </ul>
+    </div>
+
+    <!-- Tailwind CSS script-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <script>
+      const btn = document.getElementById('menu-btn')
 const nav = document.getElementById('menu')
 
 btn.addEventListener('click', () => {
-btn.classList.toggle('open')
-nav.classList.toggle('flex')
-nav.classList.toggle('hidden')
+  btn.classList.toggle('open')
+  nav.classList.toggle('flex')
+  nav.classList.toggle('hidden')
 })
-  </script>
-  </html>
+    </script>
+  </body>
+</html>
