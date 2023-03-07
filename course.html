@@ -545,5 +545,16 @@ body {
     <!-- Tailwind CSS script-->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
+    <script>
+        document.getElementById("openApplyMenu").addEventListener("click", function () {
+  document.getElementById("applyMenu").style.display = "block";
+});
+
+document
+  .getElementById("closeApplyMenu")
+  .addEventListener("click", function () {
+    document.getElementById("applyMenu").style.display = "none";
+  });
+    </script>
   </body>
 </html>

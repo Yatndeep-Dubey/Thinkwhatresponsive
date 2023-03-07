@@ -32,13 +32,22 @@ body {
   background: rgb(216, 227, 231);
   /* border-radius: 0 0 0 70%; */
   width:2313px;
-  height:650px;
+  height:660px;
   top:-235px;
   left:-436px;
   border-bottom-left-radius: 190% 800px;
   border-bottom-right-radius: 190% 800px;
 }
-
+.bg-headeres {
+  background: rgb(216, 227, 231);
+  /* border-radius: 0 0 0 70%; */
+  width:2313px;
+  height:980px;
+  top:-235px;
+  left:-436px;
+  border-bottom-left-radius: 190% 200px;
+  border-bottom-right-radius: 190% 200px;
+}
 .color-primary {
   color: rgb(39, 84, 115);
 }
@@ -77,18 +86,17 @@ body {
     cursor: pointer;
     
     right:5%;
-    top:3px;
+    top:20px;
+    display: flex;
+    justify-content: center;
     
      /* display na none kiya hai kyuki mujhe burger na phone me khana hai abhi nhi */
     
     }
-.line
-    {
-          width:33px;
-          height: 4px; 
-          background-color:black; 
-          margin: 5px 3px;
-    }
+.sleft{
+  position: absolute;
+  right:90px;
+}
 
 /* Hamburger Menu */
 .hamburger {
@@ -103,13 +111,13 @@ body {
 .hamburger-middle,
 .hamburger-bottom {
   position: absolute;
-  top: 10px;
-  left:15px;
+  left: 5%;
   width: 24px;
   height: 2px;
   background: #000;
   transform: rotate(0);
   transition: all 0.5s;
+  
 }
 
 .hamburger-middle {
@@ -136,12 +144,23 @@ body {
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
-
+@media screen and (max-width: 480px) {
+  .bg-header {
+    background: rgb(216, 227, 231);
+  /* border-radius: 0 0 0 70%; */
+  width:2313px;
+  height:918px;
+  top:-235px;
+  left:-436px;
+  border-bottom-left-radius: 190% 200px;
+  border-bottom-right-radius: 190% 200px;
+  }
+}
     </style>
   </head>
 
   <body>
-    <section class="bg-header w-screen">
+    <section class=" bg-header w-screen">
       <nav class="">
         <!-- desktop menu -->
         <div class="px-14 py-7 hidden md:flex items-center justify-between">
@@ -190,12 +209,24 @@ body {
         </div>
 
         <!-- mob menu -->
-        
+        <div class="burger  md:hidden">
+          <div
+          class="flex border w-fit bg-white sleft w-[350px] rounded-full items-center space-x-3 text-lg"
+        >
+          <img src="./public/images/searchButton.png" class="h-5 w-5" />
+          <input
+            type="text"
+            placeholder="Search"
+            class="border-none focus:outline-none rounded-full"
+          />
+        </div>
+
         <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
           <span class="hamburger-top"></span>
           <span class="hamburger-middle"></span>
           <span class="hamburger-bottom"></span>
         </button>
+      </div>
 
       <!-- Mobile Menu -->
       <div class="md:hidden">
@@ -212,21 +243,22 @@ body {
       </nav>
 
       <!-- hero section -->
-      <div class=" flex flex-col-reverse mx-[65px] -mt-[160px] md: h-[90vh] md:items-center md:flex-row md:mt-0 ">
+      <div class=" flex flex-col-reverse mx-[65px] -mt-[80px] md: h-[90vh] md:items-center md:flex-row md:mt-0 ">
         <div class="w-[100%]">
           <div class="color-primary font-bold  md:-mt-20 ">
             <p class=" text-xl text-center mt-8 -mr-[10px] sm:text-5xl md: font-bold">
-              Give the Best Start to your <span class=" invisible sm:visible">Carrier</span> </p>
-              <p class="text-center -mt-[20px] text-3xl sm:hidden"> Carrier</p>
+              Give the Best Start to your Carrier</p>
               </p>
                
             </p>
-            <p class=" text-center -mr-[10px] md:my-5 md:text-2xl">
+            <p class=" text-center md:-mr-[10px] md:flex mx-8   md:my-5 md:text-2xl">
               Learn, Grow and get Hired!
             </p>
           </div>
-
-          <div class=" items-center flex flex-col sm:flex sm:flex-row font-bold my-10 ">
+          <div class=" my-[55px] w-[200px] h-[200px] sm:hidden mx-[30px] sm:-mt-[70px] sm:invisible sm:mx-20 sm:w-[566px] sm:h-[420px] sm:my-[0px]">
+            <img src="./public/images/educationamico.svg" alt="" />
+          </div>
+          <div class="  items-center flex flex-col sm:flex sm:flex-row font-bold sm:my-10 ">
             <button
               class="hover:shadow-2xl bg-primary text-white py-3 my-2 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg"
             >
@@ -239,7 +271,7 @@ body {
             </button>
           </div>
         </div>
-        <div class=" w-[200px] h-[200px]   mx-[30px] sm:-mt-[70px] sm:mx-20 sm:w-[566px] sm:h-[420px]">
+        <div class=" w-[200px] h-[200px]  invisible mx-[30px] sm:-mt-[70px] sm:visible sm:mx-20 sm:w-[566px] sm:h-[420px]">
           <img src="./public/images/educationamico.svg" alt="" />
         </div>
       </div>
@@ -408,13 +440,7 @@ body {
     </div>
 
     <!-- lower banner section -->
-    <div class="bg-dark px-10 lg:px-44 py-5 flex justify-between items-center">
-      <p class="lg:text-4xl font-extrabold text-white sm:text-center sm:text-2xl">
-        Kickstart Your Career With <br />
-        ThinkWh?t
-      </p>
-      <img src="./public/images/logo-in-footer@2x.png" alt="logo" class="md:h-52 sm:h-44" />
-    </div>
+    
 
     <!-- footer -->
     <div class="bg-footer text-white items-center p-14 space-y-8">
