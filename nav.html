@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="absolute w-fit lg:w-full top-40 " id="applyMenu">
+    <div
+      class="bg-white py-5 px-12 rounded-lg mx-auto w-[400px] lg:w-fit shadow-lg hover:shadow-2xl space-y-8"
+    >
+      <p
+        class="text-right text-3xl cursor-pointer"
+        id="closeApplyMenu"
+        onclick="closeApplyMenu()"
+      >
+        X
+      </p>
+      <p class="text-2xl text-center font-extrabold">Application Form</p>
+      <div class="flex flex-col">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="border-2 border-gray-300 rounded-lg p-2 w-[15rem] lg:w-[25rem]"
+          placeholder="Full Name"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="number">Mobile Number</label>
+        <input
+          type="number"
+          name="mobile number"
+          id="mobile"
+          class="border-2 border-gray-300 rounded-lg p-2 w-[25rem]"
+          placeholder="+123456789"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="email">Email ID</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="border-2 border-gray-300 rounded-lg p-2 w-[25rem]"
+          placeholder="example@example.com"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="upi">UPI ID</label>
+        <input
+          type="text"
+          name="upi"
+          id="upi"
+          class="border-2 border-gray-300 rounded-lg p-2 w-[25rem]"
+          placeholder="upi@bank"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="transaction">Transaction ID</label>
+        <input
+          type="text"
+          name="transaction"
+          id="transaction"
+          class="border-2 border-gray-300 rounded-lg p-2 w-[25rem]"
+          placeholder="transactionid5494cwvev"
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label for="payment method">Payment Method</label>
+        <input
+          type="text"
+          name="payment method"
+          id="payment"
+          class="border-2 border-gray-300 rounded-lg p-2 w-[25rem]"
+          placeholder="UPI"
+        />
+      </div>
+      <div class="h-28 w-28 flex justify-center items-center border mx-auto">
+        QR Code
+      </div>
+
+      <p>
+        Program fee per month: <strong>&#x20B9;200</strong> &nbsp;
+        <del class="text-gray-500 text-xs">&#x20B9;1000</del>
+      </p>
+      <button
+        class="bg-primary text-white text-center w-full py-3 rounded-full"
+      >
+        Pay Now
+      </button>
+    </div>
+  </div>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
