@@ -1,219 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- meta tags -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <!-- meta tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 
-    <!-- title -->
-    <title>ThinkWh?t</title>
-    <style>
-     * {
-  font-family: "Lato", sans-serif;
-}
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
 
-body {
-  overflow-x: hidden;
-}
-
-.bg-header {
-  background: rgb(216, 227, 231);
-  /* border-radius: 0 0 0 70%; */
-  width:2313px;
-  height:160px;
-  top:-235px;
-  left:-436px;
-  
-}
-.bg-headeres {
-  background: rgb(216, 227, 231);
-  /* border-radius: 0 0 0 70%; */
-  width:2313px;
-  height:980px;
-  top:-235px;
-  left:-436px;
-  border-bottom-left-radius: 190% 200px;
-  border-bottom-right-radius: 190% 200px;
-}
-.color-primary {
-  color: rgb(39, 84, 115);
-}
-.color-light {
-  color: rgb(34, 116, 172);
-}
-.color-yellow {
-  color: rgb(254, 181, 33);
-}
-
-/* bg colors */
-.bg-primary {
-  background-color: rgb(39, 84, 115);
-}
-.bg-light {
-  background-color: rgb(216, 227, 231);
-}
-.bg-dark {
-  background-color: rgb(95, 128, 151);
-}
-.bg-footer {
-  background-color: rgb(36, 43, 48);
-}
-.bg-whitesmoke {
-  background-color: rgb(217, 217, 217);
-}
-
-/* border color */
-.border-primary {
-  border-color: rgb(39, 84, 115);
-}
-.burger{	
-    
-    position: absolute;
-    
-    cursor: pointer;
-    
-    right:5%;
-    top:20px;
-    display: flex;
-    justify-content: center;
-    
-     /* display na none kiya hai kyuki mujhe burger na phone me khana hai abhi nhi */
-    
+  <!-- title -->
+  <title>ThinkWh?t</title>
+  <style>
+    * {
+      font-family: "Lato", sans-serif;
     }
-.sleft{
-  position: absolute;
-  right:90px;
-}
 
-/* Hamburger Menu */
-.hamburger {
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  transition: all 0.25s;
-  position: relative;
-}
+    body {
+      overflow-x: hidden;
+    }
 
-.hamburger-top,
-.hamburger-middle,
-.hamburger-bottom {
-  position: absolute;
-  left: 5%;
-  width: 24px;
-  height: 2px;
-  background: #000;
-  transform: rotate(0);
-  transition: all 0.5s;
+    .bg-header {
+      background: rgb(216, 227, 231);
+      /* border-radius: 0 0 0 70%; */
+      width: 2313px;
+      height: 151px;
+      /* top:-235px;
+  left:-436px; */
+    /*  border-bottom-left-radius: 190% 800px;
+      border-bottom-right-radius: 190% 800px;*/
+    }
+
+    .color-primary {
+      color: rgb(39, 84, 115);
+    }
+
+    .color-light {
+      color: rgb(34, 116, 172);
+    }
+
+    .color-yellow {
+      color: rgb(254, 181, 33);
+    }
+
+    /* bg colors */
+    .bg-primary {
+      background-color: rgb(39, 84, 115);
+    }
+
+    .bg-light {
+      background-color: rgb(216, 227, 231);
+    }
+
+    .bg-dark {
+      background-color: rgb(95, 128, 151);
+    }
+
+    .bg-footer {
+      background-color: rgb(36, 43, 48);
+    }
+
+    .bg-whitesmoke {
+      background-color: rgb(217, 217, 217);
+    }
+
+    /* border color */
+    .border-primary {
+      border-color: rgb(39, 84, 115);
+    }
+
+    .burger {
+
+      position: absolute;
+
+      cursor: pointer;
+
+      right: 5%;
+      top: 20px;
+      display: flex;
+      justify-content: center;
+
+      /* display na none kiya hai kyuki mujhe burger na phone me khana hai abhi nhi */
+
+    }
+
+    .sleft {
+      position: absolute;
+      right: 230px;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      transition: all 0.25s;
+      position: relative;
+    }
+
+    .hamburger-top,
+    .hamburger-middle,
+    .hamburger-bottom {
+      position: absolute;
+      left: 5%;
+      width: 24px;
+      height: 2px;
+      background: #000;
+      transform: rotate(0);
+      transition: all 0.5s;
+
+    }
+
+    .hamburger-middle {
+      transform: translateY(7px);
+    }
+
+    .hamburger-bottom {
+      transform: translateY(14px);
+    }
+
+    .open {
+      transform: rotate(90deg);
+      transform: translateY(0px);
+    }
+
+    .open .hamburger-top {
+      transform: rotate(45deg) translateY(6px) translate(6px);
+    }
+
+    .open .hamburger-middle {
+      display: none;
+    }
+
+    .open .hamburger-bottom {
+      transform: rotate(-45deg) translateY(6px) translate(-6px);
+    }
+@media screen and (min-width:480px)
+{
+  .dp{
+             display:block;
+    }
+}
+@media  screen and (max-width:480px) {
+  .dp{
+     display: none;
+  }
   
 }
+    @media screen and (max-width: 480px) {
+      .bg-header {
+        background: rgb(216, 227, 231);
+        /* border-radius: 0 0 0 70%; */
+        width: 2313px;
+        height: 100px;
+        border-bottom-left-radius: 190% 200px;
+        border-bottom-right-radius: 190% 200px;
+      }
+    }
+    
+    .bg-list {
+      background-color: rgba(174, 211, 224, 0.8);
+    }
 
-.hamburger-middle {
-  transform: translateY(7px);
-}
-
-.hamburger-bottom {
-  transform: translateY(14px);
-}
-
-.open {
-  transform: rotate(90deg);
-  transform: translateY(0px);
-}
-
-.open .hamburger-top {
-  transform: rotate(45deg) translateY(6px) translate(6px);
-}
-
-.open .hamburger-middle {
-  display: none;
-}
-
-.open .hamburger-bottom {
-  transform: rotate(-45deg) translateY(6px) translate(-6px);
-}
-
-.bg-list
-{
-  background-color: rgba(174, 211, 224, 0.8);
-}
-    </style>
-  </head>
-
-  <body>
-    <section class=" bg-header w-screen">
-      <nav class="">
-        <!-- desktop menu -->
-        <div class="px-14 py-7 hidden md:flex items-center justify-between">
-          <div class="bg-white w-fit h-fit">
-            <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
-          </div>
-          <div
-            class="flex border w-fit bg-white py-3 px-3 ml-14 md:w-[350px] rounded-full items-center space-x-3 text-lg"
-          >
-            <img src="./public/images/searchButton.png" class="h-5 w-[15px]" />
-            <input
-              type="text"
-              placeholder="Search"
-              class="border-none focus:outline-none "
-            />
-          </div>
-
-          <div>
-            <ul class="flex text-xl space-x-14 mx-24">
-              <a href="/">
-                <li>Home</li>
-              </a>
-              <a href="/">
-                <li>About</li>
-              </a>
-              <a href="/">
-                <li>Contact</li>
-              </a>
-            </ul>
-          </div>
-
+    .moblogo {
+      position: absolute;
+      right: 280px;
+    }
+    @media screen and (max-width:330px) {
+      .moblogo
+      {
+        position: absolute;
+        right:240px;
         
-       
-            <div class="font-bold flex">
-              <a href="/login">
-              <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
-                Login
-              </button>
-              </a>
-              <a href="/signup">
-              <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
-                Sign Up
-              </button>
-            </a>
-            </div>
-        </div>
+      }
+      .sleft
+      { 
+        right:180px;
 
-        <!-- mob menu -->
-        <div class="burger  md:hidden">
-          <div
-          class="flex border w-fit bg-white sleft w-[350px] rounded-full items-center space-x-3 text-lg"
-        >
+      }
+      .sz
+      {
+        width: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="bg-header w-screen">
+    <nav class="">
+      <!-- desktop menu -->
+      <div class="px-14 py-7 hidden md:flex items-center justify-between">
+        <div class="bg-white w-fit h-fit">
+          <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
+        </div>
+        <div class="flex border w-fit bg-white py-3 px-3 ml-14 sm:ml-0 w-[350px] rounded-full items-center space-x-3 text-lg">
           <img src="./public/images/searchButton.png" class="h-5 w-5" />
-          <input
-            type="text"
-            placeholder="Search"
-            class="border-none focus:outline-none rounded-full"
-          />
+          <input type="text" placeholder="Search" class="border-none focus:outline-none" />
         </div>
 
-        <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+        <div>
+          <ul class="flex text-xl space-x-14 mx-24">
+            <a href="/">
+              <li>Home</li>
+            </a>
+            <a href="/">
+              <li>About</li>
+            </a>
+            <a href="/">
+              <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+
+        <div class="font-bold flex">
+          <a href="/login">
+            <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+              Login
+            </button>
+          </a>
+          <a href="/signup">
+            <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+              Sign Up
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!-- mob menu -->
+      <div class="burger w-fit flex flex-row  md:hidden">
+        <div class="h-[65px] moblogo w-[65px] -mt-[15px]">
+          <img src="./public/logo.png">
+        </div>
+        <div class="flex border  bg-white sleft mx-2 w-[30px] rounded-full items-center space-x-3 text-lg">
+
+          <input type="text" placeholder="Search" class="border-none focus:outline-none rounded-full mx-2 sz " />
+        </div>
+
+        <button id="menu-btn" class="block  mx-3 -mt-1 hamburger md:hidden focus:outline-none">
           <span class="hamburger-top"></span>
           <span class="hamburger-middle"></span>
           <span class="hamburger-bottom"></span>
@@ -222,16 +252,16 @@ body {
 
       <!-- Mobile Menu -->
       <div class="md:hidden">
-        <div
-          id="menu"
-          class="absolute mt-[150px] flex-col bg-list items-center hidden self-end py-8 mt-10 space-y-6 font-bold  sm:w-auto sm:self-center left-6 right-6 drop-shadow-md" >
+        <div id="menu"
+          class="absolute mt-[150px] flex-col bg-list items-center hidden self-end py-8 mt-10 space-y-6 font-bold  sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
           <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
-          
+
         </div>
       </div>
+
 
       </nav>
 
@@ -254,15 +284,15 @@ body {
 
     <!-- course detail summary -->
     <div
-      class="mt-[10px] flex flex-col w-[380px] sm:w-[840px] sm:grid grid-cols-4 sm:flex sm:flex-row shadow-xl p-7 md:mx-auto md:-mt-7 md:-mt-16  bg-white rounded-xl justify-between space-x-24 items-center"
+      class="mt-[10px] space-y-2 md:space-y-0 flex flex-col w-full mx-auto sm:w-[840px] sm:grid grid-cols-4 sm:flex sm:flex-row shadow-xl p-7 md:mx-auto md:-mt-7 md:-mt-16  bg-white rounded-xl justify-between justify-center  md:space-x-24 items-center"
     >
-      <div class="flex items-center    w-[250px] space-x-3">
+      <div class="flex items-center  w-[250px] space-x-3">
         <img
           src="https://img.icons8.com/android/24/null/clock.png"
           class="bg-light p-3 rounded h-12 "
         />
         <p>
-            Course Duration <span class="sm:invisible">₹499</span>
+            Course Duration <span class="sm:invisible">2 Months</span>
             <span class="invisible sm:visible">
             </br>
             2 Months
@@ -271,7 +301,7 @@ body {
           </p>
       
       </div>
-      <div class="   w-[250px]  flex items-center space-x-3">
+      <div class="  w-[250px]  flex items-center space-x-3">
         <img
           src="https://img.icons8.com/material-two-tone/24/null/rupee.png"
           class="  bg-light p-3 rounded h-12 "
@@ -286,10 +316,10 @@ body {
         </p>
       </div>
 
-      <div class="w-1 h-20 bg-primary hidden md:flex"></div>
+      <div class="w-1 h-20 bg-primary mx- hidden md:flex "></div>
         <div>
             <button
-            class=" -mx-[140px] bg-primary text-white sm:py-4 sm:px-12 px-3 py-2 font-bold sm:font-extrabold rounded-full"
+            class=" md:-mx-[140px] bg-primary text-white sm:py-4 sm:px-12 px-3 py-2 font-bold sm:font-extrabold rounded-full"
             id="openApplyMenu"
             onclick="openApplyMenu()"
             >
@@ -318,85 +348,85 @@ body {
       <p class="color-primary text-4xl font-extrabold text-center mb-10">
         Courses Highlights
       </p>
-      <div class="grid grid-cols-3 grid-rows-3 sm:gap-14 gap-5">
+      <div class="grid grid-cols-3 grid-rows-3 sm:gap-14 gap-2">
 
-          <div class="flex sm:flex-row flex-col text-center items-center sm:space-x-7">
+          <div class="flex  items-center sm:flex-row flex-col text-center items-center sm:space-x-7">
             <img
               src="./public/stairs.png"
               alt="Beginner Friendly"
-              class="h-12 bg-light rounded-xl p-1"
+              class="h-[50px] w-[50px] bg-light rounded-xl p-1"
             />
             <p class="sm:text-lg text-sm">Beginner Friendly</p>
           </div>
 
-          <div class="flex sm:flex-row flex-col text-center items-center space-x-7">
+          <div class="flex sm:flex-row flex-col text-center items-center justify-center md:space-x-7">
             <img
               src="./public/certificate.png"
               alt="Certificate"
-              class="h-12 bg-light rounded-xl p-1"
+              class="h-[50px] w-[50px] bg-light rounded-xl p-1"
             />
             <p class="sm:text-lg text-sm">Certificate of training and Internship</p>
           </div>
 
-          <div class="flex sm:flex-row flex-col text-center items-center space-x-7">
+          <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
             <img
               src="./public/lift-to-talk.svg"
               alt="Mobile Friendly"
-              class="h-12 bg-light rounded-xl p-1"
+              class="h-[50px] w-[50px] bg-light rounded-xl p-1"
             />
             <p class="sm:text-lg text-sm">Mobile Friendly</p>
           </div>
 
-          <div class="flex sm:flex-row flex-col text-center items-center space-x-7">
+          <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
             <img
               src="./public/learnOnline.png"
               alt="Learn Online"
-              class="h-12 bg-light rounded-xl p-1"
+              class="h-[50px] w-[50px] bg-light rounded-xl p-1"
             />
             <p class="sm:text-lg text-sm">Learn Online</p>
           </div>
 
-          <div class="flex sm:flex-row flex-col text-center items-center space-x-7">
+          <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
             <img
               src="./public/download.svg"
               alt="Downloadable Content"
-              class="h-12 bg-light rounded-xl p-1"
+              class="h-[50px] w-[50px] bg-light rounded-xl p-1"
             />
             <p class="sm:text-lg text-sm">Downloadable Content</p>
           </div>
 
-          <div class="flex sm:flex-row flex-col text-center items-center space-x-7">
+          <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
             <img
               src="./public/assignment-add.svg"
               alt="Assignments"
-              class="h-12 bg-light rounded-xl p-1"
+              class="h-[50px] w-[50px] bg-light rounded-xl p-1"
             />
             <p class="sm:text-lg text-sm">Assignments</p>
           </div>
 
-          <div class="flex sm:flex-row flex-col text-center items-center space-x-7">
+          <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
             <img
               src="./public/24-7.png"
               alt="24 X 7 Doubt clearning"
-              class="h-12 bg-light rounded-xl p-1"
+              class="h-[50px] w-[50px] bg-light rounded-xl p-1"
             />
             <p class="sm:text-lg text-sm">24 X 7 Doubt clearning</p>
           </div>
 
-          <div class="flex sm:flex-row flex-col text-center items-center space-x-7">
+          <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
             <img
               src="./public/bulb.png"
               alt="Hands-On Project Based Learning"
-              class="h-12 bg-light rounded-xl p-1"
+              class="h-[50px] w-[50px] bg-light rounded-xl p-1"
             />
             <p class="sm:text-lg text-sm">Hands-On Project Based Learning</p>
           </div>
 
-          <div class="flex sm:flex-row flex-col text-center items-center space-x-7">
+          <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
             <img
               src="./public/schedule.svg"
               alt="Lifetime Access"
-              class="h-12 bg-light rounded-xl p-1"
+              class="h-[50px] w-[50px] bg-light rounded-xl p-1"
             />
             <p class="sm:text-lg text-sm">Lifetime Access</p>
           </div>
@@ -565,29 +595,53 @@ body {
     </div>
 
     <!-- footer -->
-    <div class="bg-footer text-white items-center p-14 space-y-8">
-      <div class="flex justify-center items-center space-x-3">
-        <img src="./public/logo-in-footer@2x.png" alt="logo" class="h-16" />
-        <p class="text-2xl sm:text-5xl font-extrabold">ThinkWh?t</p>
-      </div>
+  <div class="bg-footer text-white items-center p-14 space-y-1 md:hidden">
+   
 
-      <ul
-        class="flex sm:flex-row flex-col items-center sm:space-x-16 justify-center text-sm sm:text-lg font-bold"
-      >
-        <li>Overview</li>
-        <li>Contact</li>
-        <li>Terms & Conditions</li>
-        <li>Privacy</li>
-        <li>Help</li>
-      </ul>
-
-      <ul class="flex space-x-10 justify-center">
-        <li><img src="./public/insta-logo.png" class="h-7" /></li>
-        <li><img src="./public/twitter-logo.png" class="h-7" /></li>
-        <li><img src="./public/fb-logo.png" class="h-7" /></li>
-        <li><img src="./public/linkedin-logo.png" class="h-7" /></li>
-      </ul>
+    <ul class="flex flex-row text-s space-x-4 sm:flex-row  items-center sm:space-x-16 justify-center text-sm sm:text-lg font-bold mb-2">
+      <li>Overview</li>
+      <li>Terms&Conditions</li>
+      <li>Contact</li>
+    </ul>
+    <ul class="text-s   flex flex-row items-center justify-center font-bold  mb-8" >
+      <li style="margin-left:-10px">Privacy</li>
+      <li style="margin-left:162px;">Help</li>
+    </ul>
+    <div class="flex justify-center items-center space-x-3 py-[15px]">
+      <p class="text-2xl sm:text-5xl font-extrabold">ThinkWh?t</p>
     </div>
+
+    <ul class="flex space-x-10 justify-center mt-4">
+      <li><img src="./public/images//insta-logo.png" class="h-7" /></li>
+      <li><img src="./public/images/twitter-logo.png" class="h-7" /></li>
+      <li><img src="./public/images/fb-logo.png" class="h-7" /></li>
+      <li><img src="./public/images/linkedin-logo.png" class="h-7" /></li>
+    </ul>
+  </div>
+<!--desktop footer-->
+
+<div class=" dp bg-footer text-white items-center p-14 space-y-8">
+  <div class="flex justify-center items-center space-x-3">
+    <img src="./public/images/logo-in-footer@2x.png" alt="logo" class="h-16" />
+    <p class="text-2xl sm:text-5xl font-extrabold">ThinkWh?t</p>
+  </div>
+
+  <ul class="flex sm:flex-row flex-col items-center sm:space-x-16 justify-center text-sm sm:text-lg font-bold">
+    <li>Overview</li>
+    <li>Contact</li>
+    <li>Terms & Conditions</li>
+    <li>Privacy</li>
+    <li>Help</li>
+  </ul>
+
+  <ul class="flex space-x-10 justify-center">
+    <li><img src="./public/images//insta-logo.png" class="h-7" /></li>
+    <li><img src="./public/images/twitter-logo.png" class="h-7" /></li>
+    <li><img src="./public/images/fb-logo.png" class="h-7" /></li>
+    <li><img src="./public/images/linkedin-logo.png" class="h-7" /></li>
+  </ul>
+</div>
+
 
     <!-- Tailwind CSS script-->
     <script src="https://cdn.tailwindcss.com"></script>
