@@ -1,45 +1,238 @@
-<img src="https://img.icons8.com/android/24/null/clock.png"
-                              class="bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
-                            <p class="text-xs font-bold sm:text-lg  ">
-                              CourseDuration
-                              </br>
-                              2Months
-                            </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NavBAr</title>
+</head>
+<style>
+  
+  
 
-                            <button
-                            class=" w-[140px] md:w-[200px]  bg-primary text-white sm:py-4 sm:px-12 sm:mx-10 px-3 py-2 font-bold sm:font-extrabold rounded-full"
-                            id="openApplyMenu" onclick="openApplyMenu()">
-                            Apply Now
-                          </button>
+ .logo{
+ display: flex;
+ width: 30%;
+ justify-content: center;
+ align-items: center;
+ }
+ .logo img{
+ width: 80%;
+ }
+ .navbar{
+ display: flex; 
+ align-items: center;
+ justify-content: center;
+ position: sticky; 
+ top:0; 
+ cursor: pointer; 
+ height: 130px;
+ 
+}
+ .nav-list{
+ width:100%;
+ display: flex; 
+ justify-content: center;
+ align-items: center;
+ margin-right: 100px;
+ }
+ .nav-list li{
+ list-style: none; 
+ padding: 26px 30px;
+ }
+ .nav-list li a{
+ text-decoration: none; 
+ color:black;
+ }
+ .nav-list li a:hover{
+ text-decoration: none;
+ color:grey;
+ }
+ .rightNav{
+ width:30%;
+ margin-right:100px; 
+ display: none;
+ }
+ #search{
+  padding: 10px;
+  margin-bottom: 5px;
+ font-size: 18px;
+ border: 0px solid grey;
+ border-radius: 34px;
+ }
+ .bg
+ {
+   background-color:  rgba(216, 227, 231,0.3);
+ }
+ .burger{ 
+ 
+ position: absolute;
+ cursor: pointer;
+ right:5%;
+ top:15px;
+ }
+ /* hamburger */
+ .hamburger {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      transition: all 0.25s;
+      position: relative;
+    }
 
+    .hamburger-top,
+    .hamburger-middle,
+    .hamburger-bottom {
+      position: absolute;
+      left: 5%;
+      width: 24px;
+      height: 2px;
+      background: #000;
+      transform: rotate(0);
+      transition: all 0.5s;
 
-                          <div class="flex items-center space-x-2   sm:px-0">
-                            <img src="https://img.icons8.com/material-two-tone/24/null/rupee.png"
-                              class="  bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
-                            <p class="text-xs font-bold sm:text-lg">
-                              Program fee
-                              </br>
-                              ₹499
+    }
 
+    .hamburger-middle {
+      transform: translateY(7px);
+    }
 
+    .hamburger-bottom {
+      transform: translateY(14px);
+    }
 
+    .open {
+      transform: rotate(90deg);
+      transform: translateY(0px);
+    }
 
+    .open .hamburger-top {
+      transform: rotate(45deg) translateY(6px) translate(6px);
+    }
 
+    .open .hamburger-middle {
+      display: none;
+    }
 
+    .open .hamburger-bottom {
+      transform: rotate(-45deg) translateY(6px) translate(-6px);
+    }
 
+    @media only screen and (max-width:1140px){
+ .nav-list{
+ flex-direction: column; 
+ margin-right: 0;
+ }
+ .navbar{
+ height:447px;
+ /*flex-direction: column; */
+ transition: all 0.7s ease-out;
+ }
+ .box-main{
+ flex-direction: column-reverse;
+ max-width:100%; 
+ }
+ .rightNav{
+ text-align: center; 
+  
+ }
+ #search{
+ width:100%; 
+ }
+ .burger{
+ display: block;
+ }
+ .h-nav{
+ height: 72px;
+ }
+ .v-class{
+ opacity: 0;
+ }
+  .logo{
+    margin-left: 250px;
+    
+  }
+}
+</style>
+<body>
+  <nav class="navbar bg background h-nav">
+      
+    
+    
+    <ul class="nav-list v-class text-xl">
+    <div class="logo hidden   md:flex"><img src="public/logo.png" alt="LOGO"></div>
+    <div
+        class=" hidden md:flex border rightNav  v-class  w-fit bg-white py-3 px-3   w-[350px] rounded-full items-center space-x-3 text-lg">
+        <img src="./public/images/searchButton.png" class="h-5 w-5" />
+        <input type="text" placeholder="Search" class="border-none focus:outline-none w-[250px]" />
+      </div>
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+    <li>
+      <div class="font-bold md:hidden flex md:mx-[25px]">
+        <a href="/login">
+          <button class="color-primary bg-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm md:text-lg">
+            Login
+          </button>
+        </a>
+        <a href="/signup">
+          <button class="bg-primary text-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm  md:text-lg">
+            SignUp
+          </button>
+        </a>
+      </div>
+    </li>
+    </ul>
+    
+    <div class="font-bold hidden md:flex mx-[25px]">
+      <a href="/login">
+        <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+          Login
+        </button>
+      </a>
+      <a href="/signup">
+        <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+          Sign Up
+        </button>
+      </a>
+    </div>
+        <div class="burger flex flex-row items-center md:hidden  space-x-3">
+          <div>
+          <img src="public/logo.png" class="h-[50px] w-[50px]  ">
+        </div>
+        <div>
+          <input type="text" class="rounded-xl w-[160px]">
+        </div>
+          <div class="brgr">
+          <button id="menu-btn" class="block  mx-3 mb-4 hamburger  focus:outline-none">
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+        </div>
+    
+    
+    </nav>
+      
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      const btn = document.getElementById('menu-btn')
 
-
-
-
-
-
-
-
-                              <div
-      class="mt-[10px] px-5 pr-12 md:px-0 
-      grid-rows-2 sm:grid-rows-1 sm:space-y-2
-       space-y-4 md:space-y-0 flex flex-col w-auto 
-        mx-auto sm:w-[840px] sm:gap-52 sm:grid grid-cols-2   
-        shadow-xl py-4 md:py-7 md:mx-auto  md:-mt-16 
-         bg-dark rounded-xl 
-          md:space-x-6 items-center">
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('open')
+      })
+      burger= document.querySelector('.brgr')
+navbar= document.querySelector('.navbar')
+rightNav= document.querySelector('.rightNav')
+navList= document.querySelector('.nav-list')
+burger.addEventListener('click',()=>{
+ rightNav.classList.toggle('v-class')
+ navList.classList.toggle('v-class')
+ navbar.classList.toggle('h-nav')
+ 
+})
+      </script>
+</body>
+</html>

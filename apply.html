@@ -75,20 +75,6 @@
       border-color: rgb(39, 84, 115);
     }
 
-    .burger {
-
-      position: absolute;
-
-      cursor: pointer;
-
-      right: 5%;
-      top: 20px;
-      display: flex;
-      justify-content: center;
-
-      /* display na none kiya hai kyuki mujhe burger na phone me khana hai abhi nhi */
-
-    }
 
     .sleft {
       position: absolute;
@@ -191,81 +177,165 @@
         width: 140px;
       }
     }
+    .logo{
+ display: flex;
+ width: 30%;
+ justify-content: center;
+ align-items: center;
+ }
+ .logo img{
+ width: 80%;
+ }
+ .navbar{
+ display: flex; 
+ align-items: center;
+ justify-content: center;
+ position: sticky; 
+ top:0; 
+ cursor: pointer; 
+ height: 130px;
+ 
+}
+ .nav-list{
+ width:100%;
+ display: flex; 
+ justify-content: center;
+ align-items: center;
+ margin-right: 100px;
+ }
+ .nav-list li{
+ list-style: none; 
+ padding: 26px 30px;
+ }
+ .nav-list li a{
+ text-decoration: none; 
+ color:black;
+ }
+ .nav-list li a:hover{
+ text-decoration: none;
+ color:grey;
+ }
+ .rightNav{
+ width:30%;
+ margin-right:100px; 
+ display: none;
+ }
+ #search{
+  padding: 10px;
+  margin-bottom: 5px;
+ font-size: 18px;
+ border: 0px solid grey;
+ border-radius: 34px;
+ }
+ .bg
+ {
+   background-color:  rgba(216, 227, 231,0.3);
+ }
+ .burger{ 
+ 
+ position: absolute;
+ cursor: pointer;
+ right:5%;
+ top:15px;
+ }
+ @media only screen and (max-width:1140px){
+ .nav-list{
+ flex-direction: column; 
+ margin-right: 0;
+ }
+ .navbar{
+ height:447px;
+ /*flex-direction: column; */
+ transition: all 0.7s ease-out;
+ }
+ .box-main{
+ flex-direction: column-reverse;
+ max-width:100%; 
+ }
+ .rightNav{
+ text-align: center; 
+  
+ }
+ #search{
+ width:100%; 
+ }
+ .burger{
+ display: block;
+ }
+ .h-nav{
+ height: 72px;
+ }
+ .v-class{
+ opacity: 0;
+ }
+  .logo{
+    margin-left: 250px;
+    
+  }
+}
   </style>
 </head>
 
 <body>
-  <section class="bg-header w-screen">
-    <nav class="">
-      <!-- desktop menu -->
-      <div class="px-14 py-7 hidden md:flex items-center justify-between">
-        <div class="bg-white w-fit h-fit">
-          <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
-        </div>
-        <div
-          class="flex border w-fit bg-white py-3 px-3 ml-14 sm:ml-0 w-[350px] rounded-full items-center space-x-3 text-lg">
-          <img src="./public/images/searchButton.png" class="h-5 w-5" />
-          <input type="text" placeholder="Search" class="border-none focus:outline-none" />
-        </div>
-
-        <div>
-          <ul class="flex text-xl space-x-14 mx-24">
-            <a href="/">
-              <li>Home</li>
-            </a>
-            <a href="/">
-              <li>About</li>
-            </a>
-            <a href="/">
-              <li>Contact</li>
-            </a>
-          </ul>
-        </div>
-
-        <div class="font-bold flex">
-          <a href="/login">
-            <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
-              Login
-            </button>
-          </a>
-          <a href="/signup">
-            <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
-              Sign Up
-            </button>
-          </a>
-        </div>
+  <nav class="navbar bg background h-nav">
+      
+    
+    
+    <ul class="nav-list v-class text-xl">
+    <div class="logo hidden   md:flex"><img src="public/logo.png" alt="LOGO"></div>
+    <div
+        class=" hidden md:flex border rightNav  v-class  w-fit bg-white py-3 px-3   w-[350px] rounded-full items-center space-x-3 text-lg">
+        <img src="./public/images/searchButton.png" class="h-5 w-5" />
+        <input type="text" placeholder="Search" class="border-none focus:outline-none w-[250px]" />
       </div>
-
-      <!-- mob menu -->
-      <div class="burger w-fit flex flex-row  md:hidden">
-        <div class="h-[65px] moblogo w-[65px] -mt-[15px]">
-          <img src="./public/logo.png">
-        </div>
-        <div class="flex border  bg-white sleft mx-2 w-[30px] rounded-full items-center space-x-3 text-lg">
-
-          <input type="text" placeholder="Search" class="border-none focus:outline-none rounded-full mx-2 sz " />
-        </div>
-
-        <button id="menu-btn" class="block  mx-3 -mt-1 hamburger md:hidden focus:outline-none">
-          <span class="hamburger-top"></span>
-          <span class="hamburger-middle"></span>
-          <span class="hamburger-bottom"></span>
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+    <li>
+      <div class="font-bold md:hidden flex md:mx-[25px]">
+        <a href="/login">
+          <button class="color-primary bg-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm md:text-lg">
+            Login
+          </button>
+        </a>
+        <a href="/signup">
+          <button class="bg-primary text-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm  md:text-lg">
+            SignUp
+          </button>
+        </a>
+      </div>
+    </li>
+    </ul>
+    
+    <div class="font-bold hidden md:flex mx-[25px]">
+      <a href="/login">
+        <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+          Login
         </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="md:hidden">
-        <div id="menu"
-          class="absolute mt-[150px] flex-col bg-list items-center hidden self-end py-8 mt-10 space-y-6 font-bold  sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-          <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-
+      </a>
+      <a href="/signup">
+        <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+          Sign Up
+        </button>
+      </a>
+    </div>
+        <div class="burger flex flex-row items-center md:hidden  space-x-3">
+          <div>
+          <img src="public/logo.png" class="h-[50px] w-[50px]  ">
         </div>
-      </div>
-
-
+        <div>
+          <input type="text" class="rounded-xl w-[160px]">
+        </div>
+          <div class="brgr">
+          <button id="menu-btn" class="block  mx-3 mb-4 hamburger  focus:outline-none">
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+        </div>
+    
+    
     </nav>
 
 
@@ -599,27 +669,23 @@
   
     <!-- Tailwind CSS script-->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
     <script>
-      document.getElementById("openApplyMenu").addEventListener("click", function () {
-        document.getElementById("applyMenu").style.display = "block";
-      });
-
-      document
-        .getElementById("closeApplyMenu")
-        .addEventListener("click", function () {
-          document.getElementById("applyMenu").style.display = "none";
-        });
-
       const btn = document.getElementById('menu-btn')
-      const nav = document.getElementById('menu')
 
       btn.addEventListener('click', () => {
         btn.classList.toggle('open')
-        nav.classList.toggle('flex')
-        nav.classList.toggle('hidden')
       })
-    </script>
+      burger= document.querySelector('.brgr')
+navbar= document.querySelector('.navbar')
+rightNav= document.querySelector('.rightNav')
+navList= document.querySelector('.nav-list')
+burger.addEventListener('click',()=>{
+ rightNav.classList.toggle('v-class')
+ navList.classList.toggle('v-class')
+ navbar.classList.toggle('h-nav')
+ 
+})
+      </script>
 </body>
 
 </html>
