@@ -30,7 +30,7 @@
       background: rgb(216, 227, 231);
       /* border-radius: 0 0 0 70%; */
       width: 2313px;
-      height: 740px;
+      height: 490px;
       /* top:-235px;
   left:-436px; */
       border-bottom-left-radius: 190% 800px;
@@ -75,21 +75,6 @@
       border-color: rgb(39, 84, 115);
     }
 
-    .burger {
-
-      position: absolute;
-
-      cursor: pointer;
-
-      right: 5%;
-      top: 20px;
-      display: flex;
-      justify-content: center;
-
-      /* display na none kiya hai kyuki mujhe burger na phone me khana hai abhi nhi */
-
-    }
-
     .sleft {
       position: absolute;
       right: 230px;
@@ -98,52 +83,7 @@
     /* Hamburger Menu */
     
     /* Hamburger Menu */
-    .hamburger {
-      cursor: pointer;
-      width: 24px;
-      height: 24px;
-      transition: all 0.25s;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .hamburger-top,
-    .hamburger-middle,
-    .hamburger-bottom {
-      position: absolute;
-      left: 5%;
-      width: 24px;
-      height: 3px;
-      background: #000;
-      transform: rotate(0);
-      transition: all 0.5s;
-
-    }
-
-    .hamburger-middle {
-      transform: translateY(7px);
-    }
-
-    .hamburger-bottom {
-      transform: translateY(14px);
-    }
-
-    .open {
-      transform: rotate(90deg);
-      transform: translateY(0px);
-    }
-
-    .open .hamburger-top {
-      transform: rotate(45deg) translateY(6px) translate(6px);
-    }
-
-    .open .hamburger-middle {
-      display: none;
-    }
-
-    .open .hamburger-bottom {
-      transform: rotate(-45deg) translateY(6px) translate(-6px);
-    }
+   
 @media screen and (min-width:480px)
 {
   .dp{
@@ -224,106 +164,95 @@
         width: 140px;
       }
     }
-    .logo{
- display: flex;
- width: 30%;
- justify-content: center;
- align-items: center;
- }
- .logo img{
- width: 40%;
- }
- .navbar{
- display: flex; 
- align-items: center;
- justify-content: center; 
- top:0; 
- cursor: pointer; 
- height: 130px;
- 
+    @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+
+/* hamburger */
+svg {
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
- .nav-list{
- width:100%;
- display: flex; 
- justify-content: center;
- align-items: center;
- margin-right: 100px;
- }
- .nav-list li{
- list-style: none; 
- padding: 26px 30px;
- }
- .nav-list li a{
- text-decoration: none; 
- color:black;
- }
- .nav-list li a:hover{
- text-decoration: none;
- color:grey;
- }
- .rightNav{
- width:30%;
- margin-right:100px; 
- display: none;
- }
- #search{
-  padding: 10px;
-  margin-bottom: 5px;
- font-size: 18px;
- border: 0px solid grey;
- border-radius: 34px;
- }
- .bg
- {
-   background-color:  rgb(216, 227, 231);
- }
- .burger{ 
- 
- position: absolute;
- cursor: pointer;
- top:15px;
- }
- @media only screen and (max-width:1140px){
- .nav-list{
- flex-direction: column; 
- margin-right: 0;
- }
- .navbar{
- height:447px;
- /*flex-direction: column; */
- transition: all 0.7s ease-out;
- }
- .box-main{
- flex-direction: column-reverse;
- max-width:100%; 
- }
- .rightNav{
- text-align: center; 
-  
- }
- #search{
- width:100%; 
- }
- .burger{
- display: block;
- }
- .h-nav{
- height: 72px;
- }
- .v-class{
- opacity: 0;
- }
-  .logo{
-    margin-left: 250px;
-    
-  }
+.active svg {
+  transform: rotate(90deg);
 }
+path {
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+path:nth-child(1) {
+  transform-origin: 36% 40%;
+}
+path:nth-child(2) {
+  stroke-dasharray: 29 299;
+}
+path:nth-child(3) {
+  transform-origin: 35% 63%;
+}
+path:nth-child(4) {
+  stroke-dasharray: 29 299;
+}
+path:nth-child(5) {
+  transform-origin: 61% 52%;
+}
+path:nth-child(6) {
+  transform-origin: 62% 52%;
+}
+.active path:nth-child(1) {
+  transform: translateX(9px) translateY(1px) rotate(45deg);
+}
+.active path:nth-child(2) {
+  stroke-dasharray: 225 299;
+  stroke-dashoffset: -72px;
+}
+.active path:nth-child(3) {
+  transform: translateX(9px) translateY(1px) rotate(-45deg);
+}
+.active path:nth-child(4) {
+  stroke-dasharray: 225 299;
+  stroke-dashoffset: -72px;
+}
+.active path:nth-child(5) {
+  transform: translateX(9px) translateY(1px) rotate(-45deg);
+}
+.active path:nth-child(6) {
+  transform: translateX(9px) translateY(1px) rotate(45deg);
+}
+
+/* curved bg */
+.border-curved {
+  border-radius: 0% 0% 90% 90%;
+}
+
+/* bg colors */
+.bg-light {
+  background-color: rgb(216, 227, 231);
+}
+.navbar{
+  height:100px;
+  transition: all 0.5s ease-out;
+  background-color: rgb(216, 227, 231);
+}
+.v-class
+{
+  height: 300px;
+}
+.opn
+{
+  opacity:0;
+  transition: all 0.2s ease-out;
+}
+.h-nav
+{
+  opacity:1
+}
+
+
   </style>
 </head>
 
 <body>
-  <section class="bg-header w-screen">
-    <nav class="">
+  
+    <nav class="bg-light">
       <!-- desktop menu -->
       <div class="px-14 py-7 hidden md:flex items-center justify-between">
         <div class="bg-white w-fit h-fit">
@@ -361,55 +290,95 @@
           </a>
         </div>
       </div>
-
+     <nav class="navbar">
       <!-- mob menu -->
-      <nav class="navbar md:hidden  background h-nav">
-      
-    
-    
-        <ul class="nav-list bg-dark v-class text-xl ">
-    
-        <li class="font-bold"><a href="#home">HOME</a></li>
-        <li class="font-bold"><a href="#about">ABOUT</a></li>
-        <li class="font-bold"><a href="#contact">CONTACT</a></li>
-        <li>
-          <div class="font-bold lg:hidden flex  flex-col md:flex-row space-y-3 -mt-10 md:mx-[25px]">
-            <a href="/login">
-              <button class="color-primary bg-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm md:text-lg">
-                Login
-              </button>
-            </a>
-            <a href="/signup">
-              <button class="bg-primary text-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm  md:text-lg">
-                SignUp
-              </button>
-            </a>
+      <div class="flex justify-between items-center md:hidden">
+        <div class="flex gap-5 items-center">
+          <div>
+            <img src="./public/logo.png" alt="logo image" class="h-20 w-20" />
           </div>
-        </li>
-        </ul>
-            <div class="burger flex flex-row items-center md:hidden  space-x-3">
-              <div>
-              <img src="public/logo.png" class="h-[50px] w-[50px]  ">
-            </div>
-            <div>
-              <input type="text" placeholder="Search"  class="rounded-xl px-2 w-[160px]">
-            </div>
-              <div class="brgr">
-              <button id="menu-btn" class="block  mx-3 flex items-center hamburger  focus:outline-none">
-                <span class="hamburger-top"></span>
-                <span class="hamburger-middle"></span>
-                <span class="hamburger-bottom"></span>
-              </button>
-            </div>
-            </div>
+
+          <div
+            class="flex border bg-white py-2  px-2 gap-2 rounded-full items-center h-fit"
+          >
+            <img src="./public/searchButton.png" class="h-5" />
+            <input
+              type="text"
+              placeholder="Search"
+              class="border-none focus:outline-none bg-transparent w-[140px] sm:w-40"
+            />
+          </div>
+        </div>
+
+        <!-- hamburger -->
         
-        </nav>
+        <div class="burger" onclick="this.classList.toggle('active')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            viewBox="0 0 200 200"
+            class="cursor-pointer"
+          >
+            <g stroke-width="6.5" stroke-linecap="round">
+              <path
+                d="M72 82.286h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                fill="none"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M72 125.143h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                fill="none"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 82.286h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 125.143h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+            </g>
+          </svg>
+        </div>
+
+        <!-- insert mob menu below -->
+        
+      </div>
+      <div class="nav-list op  flex justify-center items-center">
+        <ul class="opn text-lg  font-bold space-y-2">
+            <li>Home</li>
+            <li>About</li>
+            <li>contact</li>
+            <li>Login</li>
+            <li>Sign Up</li>
+        </ul>
+      </div>
+    </nav>
     </nav>
     
     <!-- hero section -->
+    <section class="bg-header w-screen">
     <!--desktop section-->
     <div
-      class="flex w-fit hidden flex-col-reverse mx-[65px] md:flex -mt-[80px] h-[90vh] md:items-center md:flex-row md:mt-0 ">
+      class="flex w-fit hidden flex-col-reverse mx-[65px] md:flex  md:items-center md:flex-row md:mt-0 ">
       <div class="w-[100%]">
         <div class="color-primary font-bold -mt-20 md:-mt-20 ">
           <p class=" text-xl text-center mt-8 md:-ml-24 sm:text-5xl md: font-bold">
@@ -417,7 +386,7 @@
           </p>
 
           </p>
-          <p class=" text-center md:-mr-[10px] md:flex mx-5   md:my-5 md:text-2xl">
+          <p class=" text-center  md:flex md:-mx-7   md:my-5 md:text-2xl">
             Learn, Grow and get Hired!
           </p>
         </div>
@@ -613,19 +582,15 @@
   <!-- Tailwind CSS script-->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    const btn = document.getElementById('menu-btn')
-
-btn.addEventListener('click', () => {
-  btn.classList.toggle('open')
-})
-burger= document.querySelector('.brgr')
-navbar= document.querySelector('.navbar')
-navList= document.querySelector('.nav-list')
-burger.addEventListener('click',()=>{
-navList.classList.toggle('v-class')
-navbar.classList.toggle('h-nav')
-
-})
+   const burger = document.querySelector('.burger')
+      const navbar= document.querySelector('.navbar')
+      const opn = document.querySelector('.opn')
+      burger.addEventListener('click',()=>
+      {
+        console.log("Button chala hai ");
+        navbar.classList.toggle('v-class')
+        opn.classList.toggle('h-nav')
+      })
   </script>
 </body>
 

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+
 
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,10 +18,11 @@
   <!-- title -->
   <title>ThinkWh?t</title>
   <style>
-    * {
+  * {
       font-family: "Lato", sans-serif;
     }
 
+    
     body {
       overflow-x: hidden;
     }
@@ -30,11 +31,11 @@
       background: rgb(216, 227, 231);
       /* border-radius: 0 0 0 70%; */
       width: 2313px;
-      height: 151px;
+      height: 490px;
       /* top:-235px;
   left:-436px; */
-      /*  border-bottom-left-radius: 190% 800px;
-      border-bottom-right-radius: 190% 800px;*/
+      border-bottom-left-radius: 190% 800px;
+      border-bottom-right-radius: 190% 800px;
     }
 
     .color-primary {
@@ -75,94 +76,67 @@
       border-color: rgb(39, 84, 115);
     }
 
-    .burger {
-
-      position: absolute;
-
-      cursor: pointer;
-
-      right: 5%;
-      top: 20px;
-      display: flex;
-      justify-content: center;
-
-      /* display na none kiya hai kyuki mujhe burger na phone me khana hai abhi nhi */
-
-    }
-
     .sleft {
       position: absolute;
       right: 230px;
     }
 
     /* Hamburger Menu */
-    .hamburger {
-      cursor: pointer;
-      width: 24px;
-      height: 24px;
-      transition: all 0.25s;
-      position: relative;
+    
+    /* Hamburger Menu */
+   
+@media screen and (min-width:480px)
+{
+  .dp{
+             display:block;
     }
-
-    .hamburger-top,
-    .hamburger-middle,
-    .hamburger-bottom {
-      position: absolute;
-      left: 5%;
-      width: 24px;
-      height: 2px;
-      background: #000;
-      transform: rotate(0);
-      transition: all 0.5s;
-
-    }
-
-    .hamburger-middle {
-      transform: translateY(7px);
-    }
-
-    .hamburger-bottom {
-      transform: translateY(14px);
-    }
-
-    .open {
-      transform: rotate(90deg);
-      transform: translateY(0px);
-    }
-
-    .open .hamburger-top {
-      transform: rotate(45deg) translateY(6px) translate(6px);
-    }
-
-    .open .hamburger-middle {
-      display: none;
-    }
-
-    .open .hamburger-bottom {
-      transform: rotate(-45deg) translateY(6px) translate(-6px);
-    }
-
-    @media screen and (min-width:480px) {
-      .dp {
-        display: block;
-      }
-    }
-
-    @media screen and (max-width:480px) {
-      .dp {
-        display: none;
-      }
-
-    }
-
+}
+@media  screen and (max-width:480px) {
+  .dp{
+     display: none;
+  }
+  
+}
     @media screen and (max-width: 480px) {
       .bg-header {
         background: rgb(216, 227, 231);
         /* border-radius: 0 0 0 70%; */
         width: 2313px;
-        height: 100px;
+        height: 940px;
         border-bottom-left-radius: 190% 200px;
         border-bottom-right-radius: 190% 200px;
+      }
+    }
+    
+    .bg-list {
+      background-color: rgba(174, 211, 224, 0.8);
+    }
+
+    .moblogo {
+      position: absolute;
+      right: 280px;
+    }
+    @media screen and (max-width:330px) {
+      .moblogo
+      {
+        position: absolute;
+        right:240px;
+        
+      }
+      .sleft
+      { 
+        right:180px;
+
+      }
+      .sz
+      {
+        width: 140px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .bg-header {
+        background: rgb(216, 227, 231);
+        /* border-radius: 0 0 0 70%; */
       }
     }
 
@@ -191,19 +165,101 @@
         width: 140px;
       }
     }
+    @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+
+/* hamburger */
+svg {
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.active svg {
+  transform: rotate(90deg);
+}
+path {
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+path:nth-child(1) {
+  transform-origin: 36% 40%;
+}
+path:nth-child(2) {
+  stroke-dasharray: 29 299;
+}
+path:nth-child(3) {
+  transform-origin: 35% 63%;
+}
+path:nth-child(4) {
+  stroke-dasharray: 29 299;
+}
+path:nth-child(5) {
+  transform-origin: 61% 52%;
+}
+path:nth-child(6) {
+  transform-origin: 62% 52%;
+}
+.active path:nth-child(1) {
+  transform: translateX(9px) translateY(1px) rotate(45deg);
+}
+.active path:nth-child(2) {
+  stroke-dasharray: 225 299;
+  stroke-dashoffset: -72px;
+}
+.active path:nth-child(3) {
+  transform: translateX(9px) translateY(1px) rotate(-45deg);
+}
+.active path:nth-child(4) {
+  stroke-dasharray: 225 299;
+  stroke-dashoffset: -72px;
+}
+.active path:nth-child(5) {
+  transform: translateX(9px) translateY(1px) rotate(-45deg);
+}
+.active path:nth-child(6) {
+  transform: translateX(9px) translateY(1px) rotate(45deg);
+}
+
+/* curved bg */
+.border-curved {
+  border-radius: 0% 0% 90% 90%;
+}
+
+/* bg colors */
+.bg-light {
+  background-color: rgb(216, 227, 231);
+}
+.navbar{
+  height:100px;
+  transition: all 0.5s ease-out;
+  background-color: rgb(216, 227, 231);
+}
+.v-class
+{
+  height: 300px;
+}
+.opn
+{
+  opacity:0;
+  transition: all 0.2s ease-out;
+}
+.h-nav
+{
+  opacity:1
+}
+
+
   </style>
 </head>
 
 <body>
-  <section class="bg-header w-screen">
-    <nav class="">
+  
+    <nav class="bg-light navbar">
       <!-- desktop menu -->
       <div class="px-14 py-7 hidden md:flex items-center justify-between">
         <div class="bg-white w-fit h-fit">
           <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
         </div>
-        <div
-          class="flex border w-fit bg-white py-3 px-3 ml-14 sm:ml-0 w-[350px] rounded-full items-center space-x-3 text-lg">
+        <div class="flex border w-fit bg-white py-3 px-3 ml-14 sm:ml-0 w-[350px] rounded-full items-center space-x-3 text-lg">
           <img src="./public/images/searchButton.png" class="h-5 w-5" />
           <input type="text" placeholder="Search" class="border-none focus:outline-none" />
         </div>
@@ -235,46 +291,97 @@
           </a>
         </div>
       </div>
-
+     <nav class="navbar">
       <!-- mob menu -->
-      <div class="burger w-fit flex flex-row  md:hidden">
-        <div class="h-[65px] moblogo w-[65px] -mt-[15px]">
-          <img src="./public/logo.png">
-        </div>
-        <div class="flex border  bg-white sleft mx-2 w-[30px] rounded-full items-center space-x-3 text-lg">
+      <div class="flex justify-between items-center md:hidden">
+        <div class="flex gap-5 items-center">
+          <div>
+            <img src="./public/logo.png" alt="logo image" class="h-20 w-20" />
+          </div>
 
-          <input type="text" placeholder="Search" class="border-none focus:outline-none rounded-full mx-2 sz " />
+          <div
+            class="flex border bg-white py-2  px-2 gap-2 rounded-full items-center h-fit"
+          >
+            <img src="./public/searchButton.png" class="h-5" />
+            <input
+              type="text"
+              placeholder="Search"
+              class="border-none focus:outline-none bg-transparent w-[140px] sm:w-40"
+            />
+          </div>
         </div>
 
-        <button id="menu-btn" class="block  mx-3 -mt-1 hamburger md:hidden focus:outline-none">
-          <span class="hamburger-top"></span>
-          <span class="hamburger-middle"></span>
-          <span class="hamburger-bottom"></span>
-        </button>
+        <!-- hamburger -->
+        
+        <div class="burger" onclick="this.classList.toggle('active')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            viewBox="0 0 200 200"
+            class="cursor-pointer"
+          >
+            <g stroke-width="6.5" stroke-linecap="round">
+              <path
+                d="M72 82.286h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                fill="none"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M72 125.143h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                fill="none"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 82.286h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+              <path
+                d="M100.75 125.143h28.75"
+                fill="#009100"
+                fill-rule="evenodd"
+                stroke="rgb(39, 84, 115)"
+              />
+            </g>
+          </svg>
+        </div>
+
+        <!-- insert mob menu below -->
+        
       </div>
-
-      <!-- Mobile Menu -->
-      <div class="md:hidden">
-        <div id="menu"
-          class="absolute mt-[150px] flex-col bg-list items-center hidden self-end py-8 mt-10 space-y-6 font-bold  sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-          <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-
-        </div>
+      <div class="nav-list op  flex justify-center items-center">
+        <ul class="opn text-lg  font-bold space-y-2">
+            <li>Home</li>
+            <li>About</li>
+            <li>contact</li>
+            <li>Login</li>
+            <li>Sign Up</li>
+        </ul>
       </div>
-
-
+    </nav>
     </nav>
 
 
     <!-- header section -->
     <div class="bg-light flex flex-col-reverse items-center px-5 md:px-16 py-14 sm:flex-row">
-      <div class="w-full sm:space-y-3">
+      <div class="w-full  sm:space-y-3">
         <p class="color-primary text-2xl md:text-5xl font-extrabold">Start Your Learning as</p>
-        <p class="color-yellow text-2xl md:text-5xl font-extrabold">Frontend Developer</p>
-        <p class="color-primary md:text-lg text-sm">
+        <p class="color-yellow -mt-1 text-2xl md:text-5xl font-extrabold">Frontend Developer</p>
+        <p class="color-primary mt-2 md:text-lg text-sm">
           This program advance your career as a Web Developer. You will learn
           top skills and be a jack of all trades and create entire website by
           yourself.
@@ -286,48 +393,96 @@
     </div>
 
     <!-- course detail summary -->
-    <div
-      class="mt-[10px] px-5 pr-12 md:px-0 
-      grid-rows-2 sm:grid-rows-1 sm:space-y-2
-       space-y-4 md:space-y-0 flex flex-col w-auto 
-        mx-auto sm:w-[840px] sm:gap-52 sm:grid grid-cols-2   
-        shadow-xl py-4 md:py-7 md:mx-auto  md:-mt-16 
-         bg-dark rounded-xl 
-          md:space-x-6 items-center">
-      <div class="grid  grid-cols-2 gap-5 sm:flex items-center sm:justify-center bg-light w-[300px]  sm:px-[30px] sm:mx-10 sm:w-[520px] space-x-4  justify-between ">
-                            <div class="flex px-6 items-center  space-x-2  sm:p-0">
-                            <img src="https://img.icons8.com/android/24/null/clock.png"
-                              class="bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
-                            <p class="text-xs font-bold sm:text-lg  ">
-                              CourseDuration
-                              </br>
-                              2Months
-                            </p>
-                          </div>
-        
-                                  <div class="flex items-center space-x-2   sm:px-0">
-                                  <img src="https://img.icons8.com/material-two-tone/24/null/rupee.png"
-                                    class="  bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
-                                  <p class="text-xs font-bold sm:text-lg">
-                                    Program fee
-                                    </br>
-                                    ₹499
-
-                                  </p>
-                                </div>
-                           </div>
-
-      <div>
+    <div class="bg-white  shadow-xl w-auto flex flex-col sm:w-[840px] sm:flex sm:flex-row justify-center items-center space-y-2 sm:space-x-10 sm:space-y-0 mx-auto p-5
+       rounded-xl  -mt-10 ">
+      <div class=" flex flex-row w-[400px]  sm:px-0 justify-center  sm:justify-between ">
+           <div class="flex items-center space-x-2 pr-5 sm:pr-0">
+            <img src="https://img.icons8.com/android/24/null/clock.png"
+            class="bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
+            <p class="text-xs font-bold sm:text-lg  ">
+              Course Duration
+              </br>
+              2 Months
+            </p>
+           </div>
+           <!--Dusri heading -->
+           <div class="flex items-center space-x-2 pl-5">
+            <img src="https://img.icons8.com/material-two-tone/24/null/rupee.png"
+            class="bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
+            <p class="text-xs font-bold sm:text-lg  ">
+              Program Fee
+              </br>
+              ₹499
+            </p>
+           </div>
+      </div>
+      <div >
         <button
-          class=" w-[140px] md:w-[200px]  bg-primary text-white sm:py-4 sm:px-12 sm:mx-10 px-3 py-2 font-bold sm:font-extrabold rounded-full"
-          id="openApplyMenu" onclick="openApplyMenu()">
-          Apply Now
-        </button>
+        class=" w-[140px]  md:w-[200px]  bg-primary text-white sm:py-4 sm:px-12 sm:mx-10 px-3 py-2 font-bold sm:font-extrabold rounded-full"
+        id="openApplyMenu" onclick="openApplyMenu()">
+        Apply Now
+      </button>
+
       </div>
     </div>
+        <!-- pop up menu -->
+        <div class=" absolute hidden  w-full lg:w-full top-40 " id="applyMenu">
+          <div
+            class="bg-white  py-5  lg:px-12 rounded-lg mx-auto w-[360px] lg:w-fit shadow-lg hover:shadow-2xl space-y-8">
+            <p class="text-right mx-5 text-3xl cursor-pointer" id="closeApplyMenu" onclick="closeApplyMenu()">
+              X
+            </p>
+            <p class="text-2xl text-center font-extrabold">Application Form</p>
+            <div class="flex flex-col">
+              <label for="name " class="mx-2">Name</label>
+              <input type="text" name="name" id="name" class="border-2 border-gray-300 rounded-lg p-2 md:w-[24rem] mx-2 "
+                placeholder="Full Name" />
+            </div>
+            <div class="flex flex-col">
+              <label for="number" class="mx-2">Mobile Number</label>
+              <input type="number" name="mobile number" id="mobile"
+                class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]" placeholder="+123456789" />
+            </div>
+            <div class="flex flex-col">
+              <label for="email" class="mx-2">Email ID</label>
+              <input type="email" name="email" id="email" class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]"
+                placeholder="example@example.com" />
+            </div>
+    
+            <div class="flex flex-col">
+              <label for="upi" class="mx-2">UPI ID</label>
+              <input type="text" name="upi" id="upi" class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]"
+                placeholder="upi@bank" />
+            </div>
+    
+            <div class="flex flex-col">
+              <label for="transaction" class="mx-2">Transaction ID</label>
+              <input type="text" name="transaction" id="transaction"
+                class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]" placeholder="transactionid5494cwvev" />
+            </div>
+    
+            <div class="flex flex-col">
+              <label for="payment method" class="mx-2">Payment Method</label>
+              <input type="text" name="payment method" id="payment"
+                class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]" placeholder="UPI" />
+            </div>
+            <div class="h-28 w-28 flex justify-center items-center border mx-auto">
+              QR Code
+            </div>
+    
+            <p class="mx-2">
+              Program fee per month: <strong>&#x20B9;200</strong> &nbsp;
+              <del class="text-gray-500 text-xs">&#x20B9;1000</del>
+            </p>
+            <button class="bg-primary text-white text-center md:w-full w-[250px] md:mx-0 mx-10 py-3 rounded-full">
+              Pay Now
+            </button>
+          </div>
+        </div>
+    
 
     <!-- about section -->
-    <div class="text-center px-7 md:px-28 my-24 space-y-7">
+    <div class="text-center px-7 md:px-28 my-[160px] space-y-7">
       <p class="color-primary text-4xl font-extrabold">About</p>
       <p>
         In this course we will learn to create frontend portion of websites. To
@@ -346,19 +501,19 @@
       <p class="color-primary text-4xl font-extrabold text-center mb-10 ">
         Courses Highlights
       </p>
-      <div class="grid grid-cols-3 grid-rows-3 sm:gap-12  sm:pl-[95px]  ">
+      <div class="grid grid-cols-3 grid-rows-3 gap-[15px] sm:gap-12  sm:pl-[95px]  ">
 
-        <div class="flex items-center sm:flex-row flex-col text-center items-center sm:space-x-7">
+        <div class="flex items-center sm:flex-row flex-col text-center items-center sm:space-x-7 ">
           <img src="./public/stairs.png" alt="Beginner Friendly" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
           <p class="sm:text-lg text-sm">Beginner Friendly</p>
         </div>
 
-        <div class="flex sm:flex-row flex-col text-center items-center justify-center md:space-x-7">
-          <img src="./public/certificate.png" alt="Certificate" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
-          <p class="sm:text-lg text-sm">Certificate of training and Internship</p>
+        <div class="  sm:mr-0 flex sm:flex-row flex-col text-center items-center md:space-x-7  ">
+          <img src="./public/certificate.png" alt="Mobile Friendly" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
+          <p class="sm:text-lg text-sm">Certification of Training</p>
         </div>
 
-        <div class=" mr-5 sm:mr-0 flex sm:flex-row flex-col text-center items-center md:space-x-7">
+        <div class=" mr-5 sm:mr-0 flex sm:flex-row flex-col text-center items-center md:space-x-7 ">
           <img src="./public/lift-to-talk.svg" alt="Mobile Friendly" class="h-[50px] w-[50px] bg-light rounded-xl p-1" />
           <p class="sm:text-lg text-sm">Mobile Friendly</p>
         </div>
@@ -379,8 +534,8 @@
         </div>
 
         <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
-          <img src="./public/24-7.png" alt="24 X 7 Doubt clearning" class="h-[50px]  w-[50px] bg-light rounded-xl p-1" />
-          <p class="sm:text-lg text-sm">24 X 7 Doubt clearning</p>
+          <img src="./public/doubt-removebg-preview.png" alt="24 X 7 Doubt clearning" class="h-[50px]  w-[50px] bg-light rounded-xl " />
+          <p class="sm:text-lg text-sm">Doubt clearning</p>
         </div>
 
         <div class="flex sm:flex-row flex-col text-center items-center md:space-x-7">
@@ -501,60 +656,6 @@
       </div>
     </div>
 
-    <!-- pop up menu -->
-    <div class="absolute  lg:w-full top-40  hidden" id="applyMenu">
-      <div
-        class="bg-white  py-5  lg:px-12 rounded-lg lg:mx-auto w-[390px] lg:w-fit shadow-lg hover:shadow-2xl space-y-8">
-        <p class="text-right text-3xl cursor-pointer" id="closeApplyMenu" onclick="closeApplyMenu()">
-          X
-        </p>
-        <p class="text-2xl text-center font-extrabold">Application Form</p>
-        <div class="flex flex-col">
-          <label for="name " class="mx-2">Name</label>
-          <input type="text" name="name" id="name" class="border-2 border-gray-300 rounded-lg p-2 w-[24rem]"
-            placeholder="Full Name" />
-        </div>
-        <div class="flex flex-col">
-          <label for="number" class="mx-2">Mobile Number</label>
-          <input type="number" name="mobile number" id="mobile"
-            class="border-2 border-gray-300 rounded-lg p-2 w-[24rem]" placeholder="+123456789" />
-        </div>
-        <div class="flex flex-col">
-          <label for="email" class="mx-2">Email ID</label>
-          <input type="email" name="email" id="email" class="border-2 border-gray-300 rounded-lg p-2 w-[24rem]"
-            placeholder="example@example.com" />
-        </div>
-
-        <div class="flex flex-col">
-          <label for="upi" class="mx-2">UPI ID</label>
-          <input type="text" name="upi" id="upi" class="border-2 border-gray-300 rounded-lg p-2 w-[24rem]"
-            placeholder="upi@bank" />
-        </div>
-
-        <div class="flex flex-col">
-          <label for="transaction" class="mx-2">Transaction ID</label>
-          <input type="text" name="transaction" id="transaction"
-            class="border-2 border-gray-300 rounded-lg p-2 w-[24rem]" placeholder="transactionid5494cwvev" />
-        </div>
-
-        <div class="flex flex-col">
-          <label for="payment method" class="mx-2">Payment Method</label>
-          <input type="text" name="payment method" id="payment"
-            class="border-2 border-gray-300 rounded-lg p-2 w-[24rem]" placeholder="UPI" />
-        </div>
-        <div class="h-28 w-28 flex justify-center items-center border mx-auto">
-          QR Code
-        </div>
-
-        <p>
-          Program fee per month: <strong>&#x20B9;200</strong> &nbsp;
-          <del class="text-gray-500 text-xs">&#x20B9;1000</del>
-        </p>
-        <button class="bg-primary text-white text-center w-full py-3 rounded-full">
-          Pay Now
-        </button>
-      </div>
-    </div>
 
     <!-- footer -->
     <div class="bg-footer text-white items-center p-14 space-y-1 md:hidden">
@@ -606,27 +707,17 @@
   
     <!-- Tailwind CSS script-->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
     <script>
-      document.getElementById("openApplyMenu").addEventListener("click", function () {
-        document.getElementById("applyMenu").style.display = "block";
-      });
-
-      document
-        .getElementById("closeApplyMenu")
-        .addEventListener("click", function () {
-          document.getElementById("applyMenu").style.display = "none";
-        });
-
-      const btn = document.getElementById('menu-btn')
-      const nav = document.getElementById('menu')
-
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('open')
-        nav.classList.toggle('flex')
-        nav.classList.toggle('hidden')
+  const burger = document.querySelector('.burger')
+      const navbar= document.querySelector('.navbar')
+      const opn = document.querySelector('.opn')
+      burger.addEventListener('click',()=>
+      {
+        console.log("Button chala hai ");
+        navbar.classList.toggle('v-class')
+        opn.classList.toggle('h-nav')
       })
-    </script>
+      </script>
 </body>
 
 </html>
