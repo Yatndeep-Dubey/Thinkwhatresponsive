@@ -18,7 +18,7 @@
   <!-- title -->
   <title>ThinkWh?t</title>
   <style>
-    * {
+  * {
       font-family: "Lato", sans-serif;
     }
 
@@ -28,6 +28,13 @@
 
     .bg-header {
       background: rgb(216, 227, 231);
+      /* border-radius: 0 0 0 70%; */
+      width: 2313px;
+      height: 740px;
+      /* top:-235px;
+  left:-436px; */
+      border-bottom-left-radius: 190% 800px;
+      border-bottom-right-radius: 190% 800px;
     }
 
     .color-primary {
@@ -68,12 +75,28 @@
       border-color: rgb(39, 84, 115);
     }
 
+    .burger {
+
+      position: absolute;
+
+      cursor: pointer;
+
+      right: 5%;
+      top: 20px;
+      display: flex;
+      justify-content: center;
+
+      /* display na none kiya hai kyuki mujhe burger na phone me khana hai abhi nhi */
+
+    }
 
     .sleft {
       position: absolute;
       right: 230px;
     }
 
+    /* Hamburger Menu */
+    
     /* Hamburger Menu */
     .hamburger {
       cursor: pointer;
@@ -121,20 +144,54 @@
     .open .hamburger-bottom {
       transform: rotate(-45deg) translateY(6px) translate(-6px);
     }
-
-    @media screen and (min-width:480px) {
-      .dp {
-        display: block;
+@media screen and (min-width:480px)
+{
+  .dp{
+             display:block;
+    }
+}
+@media  screen and (max-width:480px) {
+  .dp{
+     display: none;
+  }
+  
+}
+    @media screen and (max-width: 480px) {
+      .bg-header {
+        background: rgb(216, 227, 231);
+        /* border-radius: 0 0 0 70%; */
+        width: 2313px;
+        height: 940px;
+        border-bottom-left-radius: 190% 200px;
+        border-bottom-right-radius: 190% 200px;
       }
     }
-
-    @media screen and (max-width:480px) {
-      .dp {
-        display: none;
-      }
-
+    
+    .bg-list {
+      background-color: rgba(174, 211, 224, 0.8);
     }
 
+    .moblogo {
+      position: absolute;
+      right: 280px;
+    }
+    @media screen and (max-width:330px) {
+      .moblogo
+      {
+        position: absolute;
+        right:240px;
+        
+      }
+      .sleft
+      { 
+        right:180px;
+
+      }
+      .sz
+      {
+        width: 140px;
+      }
+    }
     @media screen and (max-width: 480px) {
       .bg-header {
         background: rgb(216, 227, 231);
@@ -265,65 +322,87 @@
 </head>
 
 <body>
-  <nav class="navbar bg-header background h-nav">
-      
-    
-    
-    <ul class="nav-list mr-[100px] v-class text-xl ">
-    <div class="logo hidden   sm:flex"><img src="public/logo.png" alt="LOGO"></div>
-    <div
-        class=" hidden sm:flex border rightNav  v-class mx-[20px]   bg-white py-3 px-3   w-[250px] rounded-full items-center space-x-3 text-lg">
+  <nav class="bg">
+    <!-- desktop menu -->
+    <div class="px-14 py-7 hidden md:flex items-center justify-between">
+      <div class="bg-white w-fit h-fit">
+        <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
+      </div>
+      <div class="flex border w-fit bg-white py-3 px-3 ml-14 sm:ml-0 w-[350px] rounded-full items-center space-x-3 text-lg">
         <img src="./public/images/searchButton.png" class="h-5 w-5" />
-        <input type="text" placeholder="Search" class="border-none focus:outline-none w-[312px]" />
+        <input type="text" placeholder="Search" class="border-none focus:outline-none" />
       </div>
 
-    <li class="font-bold"><a href="#home">HOME</a></li>
-    <li class="font-bold"><a href="#about">ABOUT</a></li>
-    <li class="font-bold"><a href="#contact">CONTACT</a></li>
-    <li>
-      <div class="font-bold lg:hidden flex  flex-col md:flex-row space-y-3 -mt-10 md:mx-[25px]">
+      <div>
+        <ul class="flex text-xl space-x-14 mx-24">
+          <a href="/">
+            <li>Home</li>
+          </a>
+          <a href="/">
+            <li>About</li>
+          </a>
+          <a href="/">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </div>
+
+      <div class="font-bold flex">
         <a href="/login">
-          <button class="color-primary bg-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm md:text-lg">
+          <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
             Login
           </button>
         </a>
         <a href="/signup">
-          <button class="bg-primary text-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm  md:text-lg">
-            SignUp
+          <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
+            Sign Up
           </button>
         </a>
       </div>
-    </li>
-    </ul>
-    
-    <div class="font-bold hidden md:flex mx-[25px]">
-      <a href="/login">
-        <button class="color-primary bg-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
-          Login
-        </button>
-      </a>
-      <a href="/signup">
-        <button class="bg-primary text-white py-3 px-3 mx-5 w-[150px] rounded-full items-center space-x-3 text-lg">
-          Sign Up
-        </button>
-      </a>
     </div>
-        <div class="burger flex flex-row items-center md:hidden  space-x-3">
-          <div>
-          <img src="public/logo.png" class="h-[50px] w-[50px]  ">
-        </div>
-        <div>
-          <input type="text" placeholder="Search"  class="rounded-xl px-2 w-[160px]">
-        </div>
-          <div class="brgr">
-          <button id="menu-btn" class="block  mx-3 flex items-center hamburger  focus:outline-none">
-            <span class="hamburger-top"></span>
-            <span class="hamburger-middle"></span>
-            <span class="hamburger-bottom"></span>
-          </button>
-        </div>
-        </div>
+
+    <!-- mob menu -->
+    <nav class="navbar md:hidden  background h-nav">
     
+  
+  
+      <ul class="nav-list bg-dark v-class text-xl ">
+  
+      <li class="font-bold"><a href="#home">HOME</a></li>
+      <li class="font-bold"><a href="#about">ABOUT</a></li>
+      <li class="font-bold"><a href="#contact">CONTACT</a></li>
+      <li>
+        <div class="font-bold lg:hidden flex  flex-col md:flex-row space-y-3 -mt-10 md:mx-[25px]">
+          <a href="/login">
+            <button class="color-primary bg-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm md:text-lg">
+              Login
+            </button>
+          </a>
+          <a href="/signup">
+            <button class="bg-primary text-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm  md:text-lg">
+              SignUp
+            </button>
+          </a>
+        </div>
+      </li>
+      </ul>
+          <div class="burger flex flex-row items-center md:hidden  space-x-3">
+            <div>
+            <img src="public/logo.png" class="h-[50px] w-[50px]  ">
+          </div>
+          <div>
+            <input type="text" placeholder="Search"  class="rounded-xl px-2 w-[160px]">
+          </div>
+            <div class="brgr">
+            <button id="menu-btn" class="block  mx-3 flex items-center hamburger  focus:outline-none">
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+          </div>
+      
+      </nav>
     
     </nav>
 
@@ -682,10 +761,8 @@ document.getElementById("openApplyMenu").addEventListener("click", function () {
       })
       burger= document.querySelector('.brgr')
 navbar= document.querySelector('.navbar')
-rightNav= document.querySelector('.rightNav')
 navList= document.querySelector('.nav-list')
 burger.addEventListener('click',()=>{
- rightNav.classList.toggle('v-class')
  navList.classList.toggle('v-class')
  navbar.classList.toggle('h-nav')
  

@@ -96,12 +96,15 @@
     }
 
     /* Hamburger Menu */
+    
+    /* Hamburger Menu */
     .hamburger {
       cursor: pointer;
       width: 24px;
       height: 24px;
       transition: all 0.25s;
       position: relative;
+      padding-bottom: 10px;
     }
 
     .hamburger-top,
@@ -110,7 +113,7 @@
       position: absolute;
       left: 5%;
       width: 24px;
-      height: 2px;
+      height: 3px;
       background: #000;
       transform: rotate(0);
       transition: all 0.5s;
@@ -189,6 +192,132 @@
         width: 140px;
       }
     }
+    @media screen and (max-width: 480px) {
+      .bg-header {
+        background: rgb(216, 227, 231);
+        /* border-radius: 0 0 0 70%; */
+      }
+    }
+
+    .bg-list {
+      background-color: rgba(174, 211, 224, 0.8);
+    }
+
+    .moblogo {
+      position: absolute;
+      right: 280px;
+    }
+
+    @media screen and (max-width:330px) {
+      .moblogo {
+        position: absolute;
+        right: 240px;
+
+      }
+
+      .sleft {
+        right: 180px;
+
+      }
+
+      .sz {
+        width: 140px;
+      }
+    }
+    .logo{
+ display: flex;
+ width: 30%;
+ justify-content: center;
+ align-items: center;
+ }
+ .logo img{
+ width: 40%;
+ }
+ .navbar{
+ display: flex; 
+ align-items: center;
+ justify-content: center; 
+ top:0; 
+ cursor: pointer; 
+ height: 130px;
+ 
+}
+ .nav-list{
+ width:100%;
+ display: flex; 
+ justify-content: center;
+ align-items: center;
+ margin-right: 100px;
+ }
+ .nav-list li{
+ list-style: none; 
+ padding: 26px 30px;
+ }
+ .nav-list li a{
+ text-decoration: none; 
+ color:black;
+ }
+ .nav-list li a:hover{
+ text-decoration: none;
+ color:grey;
+ }
+ .rightNav{
+ width:30%;
+ margin-right:100px; 
+ display: none;
+ }
+ #search{
+  padding: 10px;
+  margin-bottom: 5px;
+ font-size: 18px;
+ border: 0px solid grey;
+ border-radius: 34px;
+ }
+ .bg
+ {
+   background-color:  rgb(216, 227, 231);
+ }
+ .burger{ 
+ 
+ position: absolute;
+ cursor: pointer;
+ top:15px;
+ }
+ @media only screen and (max-width:1140px){
+ .nav-list{
+ flex-direction: column; 
+ margin-right: 0;
+ }
+ .navbar{
+ height:447px;
+ /*flex-direction: column; */
+ transition: all 0.7s ease-out;
+ }
+ .box-main{
+ flex-direction: column-reverse;
+ max-width:100%; 
+ }
+ .rightNav{
+ text-align: center; 
+  
+ }
+ #search{
+ width:100%; 
+ }
+ .burger{
+ display: block;
+ }
+ .h-nav{
+ height: 72px;
+ }
+ .v-class{
+ opacity: 0;
+ }
+  .logo{
+    margin-left: 250px;
+    
+  }
+}
   </style>
 </head>
 
@@ -234,43 +363,56 @@
       </div>
 
       <!-- mob menu -->
-      <div class="burger w-fit flex flex-row  md:hidden">
-        <div class="h-[65px] moblogo w-[65px] -mt-[15px]">
-          <img src="./public/logo.png">
-        </div>
-        <div class="flex border  bg-white sleft mx-2 w-[30px] rounded-full items-center space-x-3 text-lg">
-
-          <input type="text" placeholder="Search" class="border-none focus:outline-none rounded-full mx-2 sz " />
-        </div>
-
-        <button id="menu-btn" class="block  mx-3 -mt-1 hamburger md:hidden focus:outline-none">
-          <span class="hamburger-top"></span>
-          <span class="hamburger-middle"></span>
-          <span class="hamburger-bottom"></span>
-        </button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="md:hidden">
-        <div id="menu"
-          class="absolute mt-[150px] flex-col bg-list items-center hidden self-end py-8 mt-10 space-y-6 font-bold  sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-          <img src="./public/images/logo.png" alt="logo" class="h-24 w-24 bg-light" />
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-
-        </div>
-      </div>
-
+      <nav class="navbar md:hidden  background h-nav">
+      
+    
+    
+        <ul class="nav-list bg-dark v-class text-xl ">
+    
+        <li class="font-bold"><a href="#home">HOME</a></li>
+        <li class="font-bold"><a href="#about">ABOUT</a></li>
+        <li class="font-bold"><a href="#contact">CONTACT</a></li>
+        <li>
+          <div class="font-bold lg:hidden flex  flex-col md:flex-row space-y-3 -mt-10 md:mx-[25px]">
+            <a href="/login">
+              <button class="color-primary bg-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm md:text-lg">
+                Login
+              </button>
+            </a>
+            <a href="/signup">
+              <button class="bg-primary text-white py-3 px-3 mx-10 w-[100px] md:w-[150px] rounded-full items-center space-x-3 text-sm  md:text-lg">
+                SignUp
+              </button>
+            </a>
+          </div>
+        </li>
+        </ul>
+            <div class="burger flex flex-row items-center md:hidden  space-x-3">
+              <div>
+              <img src="public/logo.png" class="h-[50px] w-[50px]  ">
+            </div>
+            <div>
+              <input type="text" placeholder="Search"  class="rounded-xl px-2 w-[160px]">
+            </div>
+              <div class="brgr">
+              <button id="menu-btn" class="block  mx-3 flex items-center hamburger  focus:outline-none">
+                <span class="hamburger-top"></span>
+                <span class="hamburger-middle"></span>
+                <span class="hamburger-bottom"></span>
+              </button>
+            </div>
+            </div>
+        
+        </nav>
     </nav>
-
+    
     <!-- hero section -->
     <!--desktop section-->
     <div
       class="flex w-fit hidden flex-col-reverse mx-[65px] md:flex -mt-[80px] h-[90vh] md:items-center md:flex-row md:mt-0 ">
       <div class="w-[100%]">
         <div class="color-primary font-bold -mt-20 md:-mt-20 ">
-          <p class=" text-xl text-center mt-8 -mr-[10px] sm:text-5xl md: font-bold">
+          <p class=" text-xl text-center mt-8 md:-ml-24 sm:text-5xl md: font-bold">
             Give the Best Start to your Carrier</p>
           </p>
 
@@ -472,13 +614,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     const btn = document.getElementById('menu-btn')
-    const nav = document.getElementById('menu')
 
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('open')
-      nav.classList.toggle('flex')
-      nav.classList.toggle('hidden')
-    })
+btn.addEventListener('click', () => {
+  btn.classList.toggle('open')
+})
+burger= document.querySelector('.brgr')
+navbar= document.querySelector('.navbar')
+navList= document.querySelector('.nav-list')
+burger.addEventListener('click',()=>{
+navList.classList.toggle('v-class')
+navbar.classList.toggle('h-nav')
+
+})
   </script>
 </body>
 
