@@ -1,0 +1,100 @@
+<%-include('partials/header')-%>
+<div class="bg-light flex flex-col-reverse items-center px-5 w-full md:px-16 py-14 sm:flex-row">
+    <div class="w-full  sm:space-y-3">
+      <p class="color-primary text-2xl md:text-5xl font-extrabold">Start Your Learning as</p>
+      <p class="color-yellow -mt-1 text-2xl md:text-5xl font-extrabold">UI/UX Developer</p>
+      <p class="color-primary mt-2 md:text-lg text-sm">
+        This program advance your career as a Web Developer. You will learn
+        top skills and be a jack of all trades and create entire website by
+        yourself.
+      </p>
+    </div>
+    
+    <div class="w-full flex justify-end items-center">
+      <img src="../public/images/ui-ux.png" alt="avatar" class="md:h-80" />
+    </div>
+  </div>
+
+  <!-- course detail summary -->
+  <div class="bg-white  shadow-xl w-auto flex flex-col sm:w-[840px] sm:flex sm:flex-row justify-center items-center space-y-2 sm:space-x-10 sm:space-y-0 mx-auto p-5
+     rounded-xl  -mt-10 ">
+    <div class=" flex flex-row w-[400px]  sm:px-0 justify-center  sm:justify-between ">
+         <div class="flex items-center space-x-2 pr-5 sm:pr-0">
+          <img src="https://img.icons8.com/android/24/null/clock.png"
+          class="bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
+          <p class="text-xs font-bold sm:text-lg  ">
+            Course Duration
+            </br>
+            2 Months
+          </p>
+         </div>
+         <!--Dusri heading -->
+         <div class="flex items-center space-x-2 pl-5">
+          <img src="https://img.icons8.com/material-two-tone/24/null/rupee.png"
+          class="bg-light p-1 rounded h-[30px] w-[30px] sm:h-[50px] sm:w-[50px] sm:p-3 " />
+          <p class="text-xs font-bold sm:text-lg  ">
+            Program Fee
+            </br>
+            ₹200/month
+          </p>
+         </div>
+    </div>
+    <div >
+      <button
+      class=" w-[140px]  md:w-[200px]  bg-dark text-white sm:py-4 sm:px-12 sm:mx-10 px-3 py-2 font-bold sm:font-extrabold rounded-full"
+      id="openApplyMenu">
+      Apply Now
+    </button>
+
+    </div>
+  </div>
+      <!-- pop up menu -->
+      <form method="post">
+      <div class=" absolute hidden  w-full lg:w-full top-40 " id="applyMenu">
+        <div
+          class="bg-white  py-5  lg:px-12 rounded-lg mx-auto w-[360px] lg:w-fit shadow-lg hover:shadow-2xl space-y-8">
+          <p class="text-right mx-5 text-3xl cursor-pointer" id="closeApplyMenu" >
+            X
+          </p>
+          <p class="text-2xl text-center font-extrabold">Application Form</p>
+          <div class="flex flex-col">
+            <label for="number" class="mx-2">Mobile Number</label>
+            <input type="tel" name="mobile" id="mobile"
+              class="border-2 border-gray-300 rounded-lg p-2 mx-2 md:w-[24rem]" placeholder="+123456789" />
+          </div>
+           <input type="hidden" name="name" value="<%=username%>">
+           <input type="hidden" name="email" value="<%=usermail%>">
+           <input type="hidden" name="course" value="UI/UX">
+           <input type="hidden" name="courseID" value="TWUIUX">
+
+          <div class="sm:h-[300px] sm:w-[300px] h-[200px] w-[200px] flex flex-col justify-center items-center border mx-auto space-y-2">
+            <img src="../public/images/demoqr.jfif">
+          </div>
+            
+          <p>Download QR</p>
+          
+  
+          <p class="mx-2">
+            Program fee: <strong>&#x20B9;200</strong> &nbsp;
+            <del class="text-gray-500 text-xs">&#x20B9;1000</del>
+          </p>
+          <button class="bg-primary text-white text-center md:w-full w-[250px] md:mx-0 mx-10 py-3 rounded-full">
+            Pay Now
+          </button>
+        </div>
+      </div>
+    </form>
+
+  <!-- about section -->
+  <div class="text-center px-7 md:px-28 my-[160px] space-y-7">
+    <p class="color-primary text-4xl font-extrabold">About</p>
+    <p>
+      In this course we will learn to create frontend portion of websites. To
+      become a web developer it is important that we learn this because it
+      connects two vital areas: the web designing and the backend development
+      . This platform will help to land you a good job with a handsome salary
+      in this domain is to get a web developer certification.
+    </p>
+  </div>
+<%-include('partials/highlights')-%>
+<%-include('partials/footer')-%>
